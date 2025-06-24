@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meetings & Events | Sunday Walton Hall Hotel & Spa</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    :root {
+  
+      --shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .whhs_container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .whhs_intro, .whhs_packages, .whhs_contact, .whhs_room-section, .whhs_special-events {
+      margin: 4rem 0;
+      padding: 3rem;
+      background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(212,183,143,0.1));
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid #9a7d57;
+    }
+
+    .whhs_intro::before, .whhs_packages::before, .whhs_contact::before, .whhs_room-section::before, .whhs_special-events::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(46,64,51,0.05) 10px,
+        rgba(46,64,51,0.05) 20px
+      );
+      opacity: 0.1;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .whhs_intro::after, .whhs_packages::after, .whhs_contact::after, .whhs_room-section::after, .whhs_special-events::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: radial-gradient(circle at top left, rgba(212,183,143,0.2), transparent 70%);
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    .whhs_intro:hover, .whhs_packages:hover, .whhs_contact:hover, .whhs_room-section:hover, .whhs_special-events:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+      border-color:#d4b78f;
+    }
+
+    .whhs_intro h1, .whhs_packages h2, .whhs_contact h2, .whhs_room-section h2, .whhs_special-events h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color:#1a2e35;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .whhs_intro h1::after, .whhs_packages h2::after, .whhs_contact h2::after, .whhs_room-section h2::after, .whhs_special-events h2::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(to right, #d4b78f, #9a7d57);
+      margin: 0.5rem 0 1.25rem;
+      border-radius: 2px;
+    }
+
+    .whhs_intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      color: #2e4033;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .whhs_intro h2::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(to right, #d4b78f, #9a7d57);
+      margin: 0.5rem 0 1.25rem;
+      border-radius: 2px;
+    }
+
+    .whhs_meeting-rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    .whhs_meeting-room {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+      border: 2px solid #9a7d57;
+      background-clip: padding-box;
+    }
+
+    .whhs_meeting-room::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, rgba(212,183,143,0.3), rgba(154,125,87,0.3));
+      opacity: 0.2;
+      z-index: -1;
+    }
+
+    .whhs_meeting-room:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      border-color: #d4b78f;
+    }
+
+    .whhs_room-image {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .whhs_meeting-room:hover .whhs_room-image {
+      transform: scale(1.1);
+    }
+
+    .whhs_room-info {
+      padding: 2rem;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(212,183,143,0.05));
+      position: relative;
+      z-index: 1;
+    }
+
+    .whhs_room-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      color: #2e4033;
+      margin-bottom: 0.75rem;
+    }
+
+    .whhs_room-info p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .whhs_filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      justify-content: center;
+    }
+
+    .whhs_filter-btn {
+      padding: 0.75rem 2rem;
+      background: #2e4033;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 2px solid #9a7d57;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .whhs_filter-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 5px,
+        rgba(212,183,143,0.1) 5px,
+        rgba(212,183,143,0.1) 10px
+      );
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .whhs_filter-btn:hover, .whhs_filter-btn.whhs_active {
+      background: #d4b78f;
+      border-color: #2e4033;
+      color: #2e4033;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .whhs_carousel {
+      position: relative;
+      width: 100vw;
+      height: 90vh;
+      margin: 0 0 3rem 0;
+      overflow: hidden;
+      left: calc(-50vw + 50%);
+      background: linear-gradient(to bottom, rgba(46,64,51,0.1), transparent);
+    }
+
+    .whhs_carousel-container {
+      display: flex;
+      transition: transform 0.7s ease-in-out;
+      height: 100%;
+      width: 100%;
+    }
+
+    .whhs_carousel-slide {
+      position: relative;
+      flex: 0 0 100%;
+      width: 100vw;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .whhs_carousel img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+
+    .whhs_carousel-slide:hover img {
+      transform: scale(1.06);
+    }
+
+    .whhs_carousel-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(46,64,51,0.65), rgba(0,0,0,0.45));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      padding: 2.5rem;
+    }
+
+    .whhs_carousel-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1.25rem;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      letter-spacing: 2px;
+      color: #d4b78f;
+    }
+
+    .whhs_carousel-subtitle {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      max-width: 650px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+      color: #fff;
+    }
+
+    .whhs_carousel .whhs_prev, .whhs_carousel .whhs_next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(46,64,51,0.85);
+      color: #d4b78f;
+      padding: 1.25rem;
+      cursor: pointer;
+      font-size: 1.75rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      z-index: 10;
+      border: 2px solid #9a7d57;
+    }
+
+    .whhs_carousel .whhs_prev:hover, .whhs_carousel .whhs_next:hover {
+      background: #d4b78f;
+      color: #2e4033;
+      border-color:#2e4033;
+      transform: translateY(-50%) scale(1.15);
+    }
+
+    .whhs_carousel .whhs_prev { left: 20px; }
+    .whhs_carousel .whhs_next { right: 20px; }
+
+    .whhs_carousel-indicators {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .whhs_indicator {
+      width: 12px;
+      height: 12px;
+      background: rgba(212,183,143,0.7);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid #2e4033;
+    }
+
+    .whhs_indicator.whhs_active {
+      background: #d4b78f;
+      border-color: #9a7d57;
+      transform: scale(1.3);
+    }
+
+    .whhs_modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(46,64,51,0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .whhs_modal-content {
+      background: linear-gradient(to bottom, #fff, rgba(212,183,143,0.1));
+      width: 90%;
+      max-width: 700px;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      animation: fadeIn 0.5s ease;
+      position: relative;
+      border: 2px solid #d4b78f;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .whhs_modal-content input, .whhs_modal-content textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border: 2px solid #9a7d57;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      background: rgba(255,255,255,0.9);
+    }
+
+    .whhs_modal-content input:focus, .whhs_modal-content textarea:focus {
+      border-color: #d4b78f;
+      box-shadow: 0 0 8px rgba(212,183,143,0.3);
+      outline: none;
+    }
+
+    .whhs_modal-content button {
+      background: #d4b78f;
+      color: #2e4033;
+      padding: 1rem 2.5rem;
+      border: 2px solid #9a7d57;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .whhs_modal-content button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 5px,
+        rgba(46,64,51,0.1) 5px,
+        rgba(46,64,51,0.1) 10px
+      );
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    .whhs_modal-content button:hover {
+      background:#2e4033;
+      border-color: #d4b78f;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .whhs_facility-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+
+    .whhs_facility-item i {
+      color: #2e4033;
+      font-size: 1.75rem;
+    }
+
+    .whhs_btn-contact, .whhs_btn-package, .whhs_btn-inquire {
+      display: inline-block;
+      background: #2e4033;
+      color: #fff;
+      padding: 1rem 2.5rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1.5rem 0;
+      transition: all 0.3s ease;
+      border: 2px solid #9a7d57;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .whhs_btn-contact::before, .whhs_btn-package::before, .whhs_btn-inquire::before, .whhs_btn-book::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 5px,
+        rgba(212,183,143,0.1) 5px,
+        rgba(212,183,143,0.1) 10px
+      );
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    .whhs_btn-contact:hover, .whhs_btn-package:hover, .whhs_btn-inquire:hover, .whhs_btn-book:hover {
+      background:#d4b78f;
+      border-color:#2e4033;
+      color: #2e4033;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    }
+
+    .whhs_contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .whhs_carousel-title {
+        font-size: 2rem;
+      }
+
+      .whhs_carousel-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .whhs_intro, .whhs_packages, .whhs_contact, .whhs_room-section, .whhs_special-events {
+        padding: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .whhs_meeting-rooms-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .whhs_carousel {
+        height: 70vh;
+      }
+
+      .whhs_carousel img {
+        height: 70vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .whhs_carousel-title {
+        font-size: 1.5rem;
+      }
+
+      .whhs_carousel-subtitle {
+        font-size: 0.95rem;
+      }
+
+      .whhs_filter-btn {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/index/output-onlinepngtools.png" alt="Walton Hall Hotel & Spa Logo" />
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <!-- About Dropdown -->
+          <li class="dropdown">
+            <a href="#">About</a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+
+          <li><a href="rooms.html">Rooms</a></li>
+
+          <!-- Meetings & Events Dropdown -->
+          <li class="dropdown">
+            <a href="#">Meetings & Events</a>
+            <ul class="dropdown-menu">
+              <li><a href="meetings.html">Meetings</a></li>
+              <li><a href="events.html">Special Events</a></li>
+              <li><a href="exclusivehire.html">Exclusive Hire</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="christmas.html">Christmas</a></li>
+          <li><a href="https://www.vagaro.com/uk01/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVKOUWVD15XSjc0gHFQa+P52nY+71mFX0UTTLeFv6B/FsabAs5cyoxouVJ60ZqQreei4m10nSaBpIXspPkhGQ/bJvzB1+SM376okjrvm1iXOQN4Sh5OqN1JT/Gv7gHLI7EyEwXD7h9VIl7VaIdESKqY/cjk/3zwEUNX9esZhExOmTykWoApKMIcc1GOlrdZeoBVW4xe209AERY8uH28fOwBk+o+abcPS584y+nIS8nWDEzUlLns3xnzgcUNfwFUSX3LqQzqg9tVzlt1cwVnSpNaHQIZabCnsP+ZiT2ofUrKGARubyMynKnepGE8e38Ncrv3Vm7s27EDJ4QIJ6JXMJ0cVqlrWu9+BKpLFYFuBTn5nwrEbdgtsFCRNOidcFiFtRHtv1UMQ/Zg6aQzTx74FCkaAKSGtmdiW72TS6hUPx9bN7QG5P7fBR1hZf5h2Oi7kEIw==" target="_blank" rel="noopener noreferrer">Spa</a></li>
+        </ul>
+      </nav>
+
+      <!-- Booking Button -->
+      <div class="booking-button">
+        <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+      </div>
+
+      <!-- Mobile Menu (optional toggle logic can be added) -->
+      <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="whhs_container mx-auto">
+    <div class="whhs_carousel">
+      <div class="whhs_carousel-container">
+        <div class="whhs_carousel-slide">
+          <img src="images/rooms/20.jpg" alt="Meeting Room 1">
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Elegant Meeting Spaces</h2>
+            <p class="whhs_carousel-subtitle">Host your corporate events in our historic 16th-century Hall.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/rooms/21.jpg" alt="Meeting Room 2">
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Timeless Venues</h2>
+            <p class="whhs_carousel-subtitle">Perfect for conferences and private gatherings.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/rooms/22.jpg" alt="Meeting Room 3">
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Modern Facilities</h2>
+            <p class="whhs_carousel-subtitle">State-of-the-art technology in a luxurious setting.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/rooms/23.jpg" alt="Meeting Room 4">
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Bespoke Events</h2>
+            <p class="whhs_carousel-subtitle">Tailored solutions for your special occasions.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/rooms/2.jpg" alt="Meeting Room 5">
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Victorian Gardens</h2>
+            <p class="whhs_carousel-subtitle">Stunning outdoor spaces for unique events.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/rooms/25.jpg" alt="Meeting Room 6">
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Luxury Accommodations</h2>
+            <p class="whhs_carousel-subtitle">197 bedrooms, including 37 in our historic Hall.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/rooms/26.jpg" alt="Meeting Room 7">
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Unmatched Elegance</h2>
+            <p class="whhs_carousel-subtitle">Create unforgettable moments at Walton Hall.</p>
+          </div>
+        </div>
+      </div>
+      <div class="whhs_prev">❮</div>
+      <div class="whhs_next">❯</div>
+      <div class="whhs_carousel-indicators"></div>
+    </div>
+
+    <section class="whhs_intro">
+      <h1>Meetings @ Sunday Walton Hall Hotel & Spa</h1>
+      <p>Nestled in 65 acres of exquisite Warwickshire countryside, Sunday Walton Hall Hotel & Spa is a premier destination for corporate and private events. The historic 16th-century Hall, once home to the Mordaunt family, combines timeless elegance with state-of-the-art facilities, creating an inspiring setting for your meetings.</p>
+      <p>Designed as a dedicated training, conference, and events venue, our contemporary hotel features purpose-built facilities ideal for board meetings, training sessions, and large-scale events. The self-contained Courtyard Suite accommodates up to 180 delegates theatre-style, perfect for product presentations and corporate gatherings.</p>
+      <p>Our 25 event spaces, including meeting rooms, restaurants, and outdoor areas, offer unmatched flexibility, set against a backdrop of Victorian gardens and manicured lawns. All rooms include complimentary WiFi, with our in-house AV team ready to support your technical needs.</p>
+      <h2>Hotel Facilities at a Glance</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <li class="whhs_facility-item"><i class="fas fa-chair"></i> 25 event spaces, including meeting rooms and restaurants, largest seating 220 theatre-style</li>
+        <li class="whhs_facility-item"><i class="fas fa-bed"></i> 197 bedrooms, including 37 luxury rooms in our 16th Century Hall</li>
+        <li class="whhs_facility-item"><i class="fas fa-utensils"></i> Moncreiffe Restaurant, Mordaunt Restaurant, Orangery Restaurant</li>
+        <li class="whhs_facility-item"><i class="fas fa-cocktail"></i> Conservatory Bar, Lemon Tree Bar, Hall Lounge</li>
+        <li class="whhs_facility-item"><i class="fas fa-spa"></i> Spa & Leisure Club with indoor pool, gym, sauna, and beauty rooms</li>
+        <li class="whhs_facility-item"><i class="fas fa-lock"></i> Exclusive use available</li>
+        <li class="whhs_facility-item"><i class="fas fa-wifi"></i> Complimentary WiFi throughout</li>
+        <li class="whhs_facility-item"><i class="fas fa-parking"></i> Ample free on-site parking</li>
+      </ul>
+    </section>
+
+    <section class="whhs_packages">
+      <h2>Flexible Packages</h2>
+      <p>Our bespoke day and 24-hour delegate packages are tailored to your meeting needs, ensuring a seamless and productive event. Packages include:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Complimentary standard WiFi (upgrades available)</li>
+        <li>Personal greeting from your dedicated meeting host</li>
+        <li>Fully set-up room with coffee or specialty teas on arrival</li>
+        <li>Unlimited refreshments throughout the day, served as you prefer</li>
+        <li>Optional coffee and snack to-go for delegates</li>
+        <li>Seasonal, healthy lunch options tailored to your requirements</li>
+        <li>LCD screens with user guides and on-site AV support</li>
+        <li>Transparent ‘one bill’ account with no hidden costs</li>
+      </ul>
+      <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+        <input type="hidden" name="_subject" value="Package Inquiry">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+        <button type="submit" class="whhs_btn-package">Inquire About Packages</button>
+      </form>
+    </section>
+
+    <section class="whhs_special-events">
+      <h2>Special Events</h2>
+      <p>Elevate your private occasions with our exquisite venues. Host intimate private dinners in the Director Suite, celebrate proms with grandeur in the Moncreiffe Restaurant, or mark engagements with a bespoke event in the Courtyard Suite. Our team ensures every detail reflects your vision, from tailored menus to elegant décor.</p>
+      <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+        <input type="hidden" name="_subject" value="Special Event Inquiry">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+        <button type="submit" class="whhs_btn-inquire">Plan Your Event</button>
+      </form>
+    </section>
+
+    <section class="whhs_room-section">
+      <h2>Our Event Spaces</h2>
+      <div class="whhs_filter-buttons">
+        <button class="whhs_filter-btn whhs_active" data-filter="all">All</button>
+        <button class="whhs_filter-btn" data-filter="modern">Modern Hotel</button>
+        <button class="whhs_filter-btn" data-filter="hall">16th Century Hall</button>
+        <button class="whhs_filter-btn" data-filter="small">Small Meetings</button>
+        <button class="whhs_filter-btn" data-filter="dining">Dining & Bars</button>
+      </div>
+      <div class="whhs_meeting-rooms-grid">
+        <div class="whhs_meeting-room" data-category="modern small">
+          <img src="images/rooms/Ash.jpg" alt="Ash Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Ash</h3>
+            <p>Located on the ground floor of our Modern hotel, this air-conditioned room is perfect for small meetings.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Ash Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall">
+          <img src="images/rooms/Avoncliffe.jpg" alt="Avonclieffe Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Avonclieffe</h3>
+            <p>Within our 16th Century Hall, this room offers natural daylight, air conditioning, and a car park access door, ideal for storage or office use.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Avonclieffe Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall">
+          <img src="images/rooms/Badgworth.jpg" alt="Badgworth Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Badgworth</h3>
+            <p>On the ground floor of our 16th Century Hall, this room features air conditioning and natural daylight.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Badgworth Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="modern">
+          <img src="images/rooms/Beech.jpg" alt="Beech Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Beech</h3>
+            <p>Located on the ground floor of our modern hotel, with floor-to-ceiling windows providing ample natural daylight and air conditioning.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Beech Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="modern">
+          <img src="images/rooms/Cedar.jpg" alt="Cedar Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Cedar</h3>
+            <p>On the first floor of our modern hotel, with natural daylight, air conditioning, and views of our Victorian gardens from the opposite roof terrace.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Cedar Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="modern">
+          <img src="images/rooms/Chestnut.jpg" alt="Chestnut Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Chestnut</h3>
+            <p>Ground floor of our modern hotel, featuring natural daylight and air conditioning.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Chestnut Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall">
+          <img src="images/rooms/Courtyard.jpg" alt="Courtyard Suite" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Courtyard Suite</h3>
+            <p>Adjoining Walton Hall, this ground-floor suite has its own entrance, patio doors to the terrace, and natural daylight, ideal for large events or BBQs.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Courtyard Suite Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall">
+          <img src="images/rooms/D'Eivile.jpg" alt="D'Elvile Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>D'Elvile</h3>
+            <p>Located on the first floor of the Hall, close to the Refreshment Area.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="D'Elvile Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall small">
+          <img src="images/rooms/Directors Suite Conference.jpg" alt="Director Suite" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Director Suite</h3>
+            <p>Overlooking the grounds with 16th-century charm, this ground-floor Hall room is perfect for private dining, small board meetings, or syndicate rooms.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Director Suite Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall">
+          <img src="images/rooms/Grounds.jpg" alt="Grounds" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Grounds</h3>
+            <p>Our 65-acre estate offers manicured lawns and fields, perfect for outdoor events and motorised sports.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Grounds Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="modern small">
+          <img src="images/rooms/ash.jpg" alt="Holly Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Holly</h3>
+            <p>Ground floor of our modern hotel, ideal for small meetings.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Holly Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall">
+          <img src="images/rooms/Indore.jpg" alt="Indore Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Indore</h3>
+            <p>Located in the main Hall with traditional surroundings, overlooking the grounds.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Indore Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall">
+          <img src="images/rooms/Massingham Boardroom.bmp" alt="Massingham Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Massingham</h3>
+            <p>Ground floor of our 16th Century Hall, with natural daylight and air conditioning.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Massingham Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall dining">
+          <img src="26.jpg" alt="Moncreiffe Restaurant" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Moncreiffe Restaurant</h3>
+            <p>Featuring three stunning chandeliers and views of the gardens, this room is perfect for meetings and dining with a wow factor.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Moncreiffe Restaurant Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall">
+          <img src="images/rooms/mordaunt.png" alt="Mordaunt Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Mordaunt</h3>
+            <p>Ground floor of our 16th Century Hall, with natural daylight and beautiful views of the grounds.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Mordaunt Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="modern small">
+          <img src="images/rooms/Ash.jpg" alt="Oak Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Oak</h3>
+            <p>Ground floor of our modern hotel, air-conditioned and perfect for small meetings.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Oak Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="modern">
+          <img src="images/rooms/Pine.jpg" alt="Pine Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Pine</h3>
+            <p>First floor of our modern hotel, with natural daylight and air conditioning.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Pine Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="modern">
+          <img src="images/rooms/Poplar.jpg" alt="Poplar Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Poplar</h3>
+            <p>First floor of our modern hotel, with natural daylight and air conditioning. Opposite the roof terrace and conference break out area, where refreshments are served all day.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Poplar Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="modern">
+          <img src="images/rooms/Rowan Boardroom.jpg" alt="Rowan Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Rowan</h3>
+            <p>First floor of our modern hotel, with natural daylight and air conditioning. Located near the roof terrace and conference break out area, where refreshments are served throughout the day.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Rowan Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="modern">
+          <img src="images/rooms/Sycamore Cabaret 1.jpg resized.jpg" alt="Sycamore Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Sycamore</h3>
+            <p>First floor of our modern hotel, with floor-to-ceiling windows providing ample natural daylight, air conditioning, and proximity to the roof terrace and break out area.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Sycamore Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="modern dining">
+          <img src="images/rooms/Oranges Restuarant (1).jpg" alt="Oranges Restaurant & Lemons Bar Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Oranges Restaurant & Lemons Bar</h3>
+            <p>Ground floor of the modern hotel, with a conservatory area and doors leading to a seating area in the Victorian gardens.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Oranges Restaurant & Lemons Bar Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall dining">
+          <img src="images/rooms/Holly.jpg" alt="Hall Lounge Hall" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Hall Lounge</h3>
+            <p>Ideal for pre-dinner drinks, entertainment, exhibitions, or breakout areas, with quirky and elegant décor.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Hall Lounge Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall dining">
+          <img src="images/rooms/Conservatory Bar 1 (1).jpg" alt="Conservatory Bar" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Conservatory Bar</h3>
+            <p>Located in the 16th-century Hall, this bar offers wraparound views of the grounds and lake, blending old and new elegance.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Conservatory Bar Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="hall small">
+          <img src="images/rooms/Wicken.jpg" alt="Wicken Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Wicken</h3>
+            <p>In our 16th Century Hall, with natural daylight and air conditioning, perfect for smaller meetings or as an office space.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Wicken Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+        <div class="whhs_meeting-room" data-category="modern">
+          <img src="images/rooms/23.jpg" alt="Willow Room" class="whhs_room-image">
+          <div class="whhs_room-info">
+            <h3>Willow</h3>
+            <p>Ground floor of our modern hotel, with floor-to-ceiling windows providing lots of natural daylight and air conditioning.</p>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+              <input type="hidden" name="_subject" value="Willow Room Inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <button type="submit" class="whhs_btn-inquire">Inquire</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="whhs_contact">
+      <h2>Contact Us</h2>
+      <p>Let our team bring your event vision to life, from corporate meetings to private celebrations. Reach out to discuss your requirements or plan a visit.</p>
+      <p><strong>Phone:</strong> 01789 842424</p>
+      <p><strong>Email:</strong> <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a></p>
+      <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+        <input type="hidden" name="_subject" value="General Contact Inquiry">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+        <button type="submit" class="whhs_btn-contact">Contact</button>
+      </form>
+    </section>
+
+    <div class="whhs_modal" id="contactModal">
+      <div class="whhs_modal-content">
+        <h3 class="font-cinzel text-2xl mb-4">Event Inquiry</h3>
+        <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="tel" name="phone" placeholder="Phone Number">
+          <textarea rows="4" name="details" placeholder="Event Details (e.g., date, type, number of guests)" required></textarea>
+          <input type="hidden" name="_subject" value="Event Inquiry">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+          <button type="submit">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+        <div class="footer-columns">
+            <div class="footer-column">
+              <li>
+                <a href="contact.html" class="footer-button">Contact Us</a>
+              </li>
+                <address>
+                    Sunday Warwickshire Walton Hall Hotel & Spa<br>
+                    Walton, Wellesbourne, CV35 9HG<br>
+                    <a href="tel:+441789842424">+44 01789 842424</a><br>
+                    <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a>
+                </address>
+            </div>
+            <div class="footer-column">
+                <h4>Getting Here</h4>
+                <p>From the M40 (South), exit at junction 15. Take the fourth exit onto the A429 to Cirencester. Continue through Barford and turn left at the roundabout for Wellesbourne.</p>
+            </div>
+            <div class="newsletter">
+              <h4>Newsletter</h4>
+              <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="newsletter-form">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button class="btn" type="submit">Subscribe</button>
+                <!-- Settings -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Newsletter Signup!">
+                <input type="hidden" name="_next" value="https://yourdomain.com/newsletter.html?subscribed=true">
+              </form>
+              <div id="newsletter-popup" class="popup-message">Thank you for subscribing! 🎉</div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Sunday Warwickshire Walton Hall Hotel & Spa. All rights reserved.</p>
+            <ul class="footer-legal">
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms & Conditions</a></li>
+                <li><a href="#sitemap">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+  <script>
+    // Carousel
+    const carouselContainer = document.querySelector('.whhs_carousel-container');
+    const carouselSlides = document.querySelectorAll('.whhs_carousel-slide');
+    const indicatorsContainer = document.querySelector('.whhs_carousel-indicators');
+    let currentIndex = 0;
+    const totalSlides = carouselSlides.length;
+
+    for (let i = 0; i < totalSlides; i++) {
+      const indicator = document.createElement('div');
+      indicator.classList.add('whhs_indicator');
+      if (i === 0) indicator.classList.add('whhs_active');
+      indicator.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarousel();
+      });
+      indicatorsContainer.appendChild(indicator);
+    }
+
+    function updateCarousel() {
+      carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+      document.querySelectorAll('.whhs_indicator').forEach((indicator, i) => {
+        indicator.classList.toggle('whhs_active', i === currentIndex);
+      });
+    }
+
+    document.querySelector('.whhs_prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    });
+
+    document.querySelector('.whhs_next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    });
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    }, 5000);
+
+    carouselSlides.forEach(slide => {
+      const img = slide.querySelector('img');
+      img.onerror = () => {
+        img.src = 'images/carousel/placeholder.jpg';
+      };
+    });
+
+    // Filter
+    const filterButtons = document.querySelectorAll('.whhs_filter-btn');
+    const meetingRooms = document.querySelectorAll('.whhs_meeting-room');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('whhs_active'));
+        button.classList.add('whhs_active');
+        const filter = button.getAttribute('data-filter');
+        meetingRooms.forEach(room => {
+          const categories = room.getAttribute('data-category').split(' ');
+          room.style.display = filter === 'all' || categories.includes(filter) ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Modal
+    const modal = document.getElementById('contactModal');
+    const modalButtons = document.querySelectorAll('.whhs_btn-contact, .whhs_btn-inquire, .whhs_btn-package');
+    modalButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'flex';
+      });
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+
+    // Mobile menu toggle
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('whhs_active');
+      mobileToggle.classList.toggle('active');
+      if (mobileToggle.classList.contains('active')) {
+        mobileToggle.querySelectorAll('span')[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        mobileToggle.querySelectorAll('span')[1].style.opacity = '0';
+        mobileToggle.querySelectorAll('span')[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+      } else {
+        mobileToggle.querySelectorAll('span')[0].style.transform = 'none';
+        mobileToggle.querySelectorAll('span')[1].style.opacity = '1';
+        mobileToggle.querySelectorAll('span')[2].style.transform = 'none';
+      }
+    });
+
+    // Parallax effect
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      document.querySelectorAll('.whhs_intro, .whhs_packages, .whhs_contact, .whhs_room-section, .whhs_special-events').forEach(section => {
+        const speed = 0.15;
+        section.style.backgroundPositionY = -(scrolled * speed) + 'px';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rooms | Sunday Warwickshire Walton Hall Hotel & Spa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+  
+
+    .rooms-section {
+      padding: 80px 20px;
+      max-width: 1300px;
+      margin: auto;
+      background: linear-gradient(180deg, #f5f7fa, var(--background-light));
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rooms-section h2 {
+      color: #2e4033;;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 60px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    .rooms-section h2::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: #9a7d57;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 40px;
+    }
+
+    .room-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      position: relative;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .room-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border: 2px solid var(--accent-color);
+    }
+
+    .room-image {
+      width: 100%;
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .room-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .room-image .bathroom-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease;
+    }
+
+    .room-card:hover .room-image .main-image {
+      opacity: 0;
+      transform: scale(1.05);
+    }
+
+    .room-card:hover .room-image .bathroom-image {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .room-content {
+      padding: 30px;
+      background: linear-gradient(180deg, #ffffff, #f8f8f8);
+      position: relative;
+    }
+
+    .room-content h3 {
+      margin: 0 0 15px;
+      color: #2e4033;
+      font-size: 1.8rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .room-card:hover .room-content h3 {
+      color: var(--accent-color);
+    }
+
+    .room-content p {
+      font-size: 1rem;
+      color: #000000;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .room-facilities {
+      font-size: 0.95rem;
+      color: #777;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    
+    /* Popup Modal Styles */
+    .image-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      overflow-y: auto;
+    }
+    .image-popup.show {
+      display: flex;
+    }
+    .popup-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 80%;
+      display: flex;
+      gap: 10px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .popup-content img {
+      width: 50%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+    .close-popup {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: #fff;
+      color: #2e4033;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .rooms-section h2 {
+        font-size: 2.2rem;
+      }
+      .rooms-grid {
+        grid-template-columns: 1fr;
+      }
+      .room-image {
+        height: 200px;
+      }
+      .popup-content {
+        width: 95%;
+        padding: 20px;
+      }
+      .popup-images {
+        flex-direction: column;
+        align-items: center;
+      }
+      .popup-images img {
+        width: 100%;
+        max-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/index/output-onlinepngtools.png" alt="Walton Hall Hotel & Spa Logo" />
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <!-- About Dropdown -->
+          <li class="dropdown">
+            <a href="#">About</a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+
+          <li><a href="rooms.html">Rooms</a></li>
+
+          <!-- Meetings & Events Dropdown -->
+          <li class="dropdown">
+            <a href="#">Meetings & Events</a>
+            <ul class="dropdown-menu">
+              <li><a href="meetings.html">Meetings</a></li>
+              <li><a href="events.html">Special Events</a></li>
+              <li><a href="exclusivehire.html">Exclusive Hire</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="christmas.html">Christmas</a></li>
+          <li><a href="https://www.vagaro.com/uk01/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVKOUWVD15XSjc0gHFQa+P52nY+71mFX0UTTLeFv6B/FsabAs5cyoxouVJ60ZqQreei4m10nSaBpIXspPkhGQ/bJvzB1+SM376okjrvm1iXOQN4Sh5OqN1JT/Gv7gHLI7EyEwXD7h9VIl7VaIdESKqY/cjk/3zwEUNX9esZhExOmTykWoApKMIcc1GOlrdZeoBVW4xe209AERY8uH28fOwBk+o+abcPS584y+nIS8nWDEzUlLns3xnzgcUNfwFUSX3LqQzqg9tVzlt1cwVnSpNaHQIZabCnsP+ZiT2ofUrKGARubyMynKnepGE8e38Ncrv3Vm7s27EDJ4QIJ6JXMJ0cVqlrWu9+BKpLFYFuBTn5nwrEbdgtsFCRNOidcFiFtRHtv1UMQ/Zg6aQzTx74FCkaAKSGtmdiW72TS6hUPx9bN7QG5P7fBR1hZf5h2Oi7kEIw==" target="_blank" rel="noopener noreferrer">Spa</a></li>
+        </ul>
+      </nav>
+
+      <!-- Booking Button -->
+      <div class="booking-button">
+        <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+      </div>
+
+      <!-- Mobile Menu (optional toggle logic can be added) -->
+      <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+
+  <section style="height: 100px;"></section>
+  <section class="rooms-section">
+    <h2>Our Rooms & Suites</h2>
+    <div class="rooms-grid">
+      <div class="room-card">
+        <div class="room-image">
+          <img class="main-image" src="images/accomodation/standard double room 1.jpg" alt="Standard Double Room" data-bedroom-src="images/standard double room 1.jpg" data-bathroom-src="images/standard double room 2.jpg">
+          <img class="bathroom-image" src="images/accomodation/standard double room 2.jpg" alt="Standard Double Room Bathroom" data-bedroom-src="images/standard double room 1.jpg" data-bathroom-src="images/standard double room 2.jpg">
+        </div>
+        <div class="room-content">
+          <h3>Standard Double Room</h3>
+          <p>1 double bed · 14 m² · Free WiFi · Private Bathroom · TV</p>
+          <div class="room-facilities">Bath or shower · Hairdryer · Tea/Coffee maker · No smoking</div>
+          <div class="booking-button">
+            <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+          </div>        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-image">
+          <img class="main-image" src="images/accomodation/Standard Twin room 1.jpg" alt="Standard Twin Room" data-bedroom-src="images/Standard Twin room 1.jpg" data-bathroom-src="images/Standard twin image 2.jpg">
+          <img class="bathroom-image" src="images/accomodation/Standard twin image 2.jpg" alt="Standard Twin Room Bathroom" data-bedroom-src="images/Standard Twin room 1.jpg" data-bathroom-src="images/Standard twin image 2.jpg">
+        </div>
+        <div class="room-content">
+          <h3>Standard Twin Room</h3>
+          <p>2 single beds · 14 m² · Free WiFi · Private Bathroom · TV</p>
+          <div class="room-facilities">Safety deposit box · Desk · Tea/Coffee maker · No smoking</div>
+          <div class="booking-button">
+            <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+          </div>        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-image">
+          <img class="main-image" src="images/accomodation/suite 1.jpg" alt="Suite" data-bedroom-src="images/suite 1.jpg" data-bathroom-src="images/suite 2.jpg">
+          <img class="bathroom-image" src="images/accomodation/suite 2.jpg" alt="Suite Bathroom" data-bedroom-src="images/suite 1.jpg" data-bathroom-src="images/suite 2.jpg">
+        </div>
+        <div class="room-content">
+          <h3>Suite</h3>
+          <p>1 large double bed · Garden View · 14 m² · Bathrobe · Slippers</p>
+          <div class="room-facilities">Private suite · Garden view · Fold-up bed · No smoking</div>
+          <div class="booking-button">
+            <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+          </div>        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-image">
+          <img class="main-image" src="images/accomodation/Hall Superior Bedroom 3 (2).jpg" alt="Superior Double Room" data-bedroom-src="images/Hall Superior Bedroom 3 (2).jpg" data-bathroom-src="images/Hall Superior Bedroom Bath (2).jpg">
+          <img class="bathroom-image" src="images/accomodation/Hall Superior Bedroom Bath (2).jpg" alt="Superior Double Room Bathroom" data-bedroom-src="images/Hall Superior Bedroom 3 (2).jpg" data-bathroom-src="images/Hall Superior Bedroom Bath (2).jpg">
+        </div>
+        <div class="room-content">
+          <h3>Superior Double Room</h3>
+          <p>1 double bed · 15 m² · Bathrobe · Flat-screen TV</p>
+          <div class="room-facilities">Heating · Slippers · No smoking</div>
+          <div class="booking-button">
+            <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+          </div>        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-image">
+          <img class="main-image" src="images/accomodation/superior twin.jpg" alt="Superior Twin Room" data-bedroom-src="images/superior twin.jpg" data-bathroom-src="images/Hall Superior Bedroom Bathroom.jpg">
+          <img class="bathroom-image" src="images/accomodation/Hall Superior Bedroom Bathroom.jpg" alt="Superior Twin Room Bathroom" data-bedroom-src="images/superior twin.jpg" data-bathroom-src="images/Hall Superior Bedroom Bathroom.jpg">
+        </div>
+        <div class="room-content">
+          <h3>Superior Twin Room</h3>
+          <p>2 single beds · 15 m² · Bath & Shower · Tea/Coffee maker</p>
+          <div class="room-facilities">Flat-screen TV · No smoking</div>
+          <div class="booking-button">
+            <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+          </div>        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-image">
+          <img class="main-image" src="images/accomodation/Hotel Privilege Accessible Room.jpg" alt="Privilege Double Room" data-bedroom-src="images/Hotel Privilege Accessible Room.jpg" data-bathroom-src="images/Hotel Privilege Accessible Wetroom.jpg">
+          <img class="bathroom-image" src="images/accomodation/Hotel Privilege Accessible Wetroom.jpg" alt="Privilege Double Room Bathroom" data-bedroom-src="images/Hotel Privilege Accessible Room.jpg" data-bathroom-src="images/Hotel Privilege Accessible Wetroom.jpg">
+        </div>
+        <div class="room-content">
+          <h3>Privilege Double Room</h3>
+          <p>1 double bed · 14 m² · Bath & Shower · Safety deposit box</p>
+          <div class="room-facilities">Iron · Satellite TV · No smoking</div>
+          <div class="booking-button">
+            <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+          </div>        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-image">
+          <img class="main-image" src="images/accomodation/Apartment.jpg" alt="One-Bedroom Apartment" data-bedroom-src="images/Apartment.jpg" data-bathroom-src="images/walton-hall-hotel-spa-by-sunday-one-bedroom-apartment-116_17470084715.jpg">
+          <img class="bathroom-image" src="images/accomodation/walton-hall-hotel-spa-by-sunday-one-bedroom-apartment-116_17470084715.jpg" alt="One-Bedroom Apartment Bathroom" data-bedroom-src="images/Apartment.jpg" data-bathroom-src="images/walton-hall-hotel-spa-by-sunday-one-bedroom-apartment-116_17470084715.jpg">
+        </div>
+        <div class="room-content">
+          <h3>One-Bedroom Apartment</h3>
+          <p>1 double bed · 18 m² · Tea/Coffee Maker · Heating</p>
+          <div class="room-facilities">Flat-screen TV · No smoking</div>
+          <div class="booking-button">
+            <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+          </div>        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-image">
+          <img class="main-image" src="images/accomodation/walton-hall-hotel-spa-by-sunday-two-bedroom-apartment-171_17470084722.jpg alt="Two-Bedroom Apartment" data-bedroom-src="images/walton-hall-hotel-spa-by-sunday-two-bedroom-apartment-171_17470084722.jpg" data-bathroom-src="images/walton-hall-hotel-spa-by-sunday-two-bedroom-apartment-171_17470084723.jpg">
+          <img class="bathroom-image" src="images/accomodation/walton-hall-hotel-spa-by-sunday-two-bedroom-apartment-171_17470084723.jpg" alt="Two-Bedroom Apartment Bathroom" data-bedroom-src="images/walton-hall-hotel-spa-by-sunday-two-bedroom-apartment-171_17470084722.jpg" data-bathroom-src="images/walton-hall-hotel-spa-by-sunday-two-bedroom-apartment-171_17470084723.jpg">
+        </div>
+        <div class="room-content">
+          <h3>Two-Bedroom Apartment</h3>
+          <p>2 double beds · 20 m² · Living Room · Satellite channels</p>
+          <div class="room-facilities">Seating Area · Electric kettle · No smoking</div>
+          <div class="booking-button">
+            <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+          </div>        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Image Popup Modal -->
+  <div class="image-popup" id="imagePopup">
+    <div class="popup-content">
+      <button class="close-popup" id="closePopup">×</button>
+      <img id="bedroomImage" src="" alt="Bedroom Image">
+      <img id="bathroomImage" src="" alt="Bathroom Image">
+    </div>
+  </div>
+  <footer class="site-footer" id="contact">
+    <div class="container">
+        <div class="footer-columns">
+            <div class="footer-column">
+              <li>
+                <a href="contact.html" class="footer-button">Contact Us</a>
+              </li>
+                <address>
+                    Sunday Warwickshire Walton Hall Hotel & Spa<br>
+                    Walton, Wellesbourne, CV35 9HG<br>
+                    <a href="tel:+441789842424">+44 01789 842424</a><br>
+                    <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a>
+                </address>
+            </div>
+            <div class="footer-column">
+                <h4>Getting Here</h4>
+                <p>From the M40 (South), exit at junction 15. Take the fourth exit onto the A429 to Cirencester. Continue through Barford and turn left at the roundabout for Wellesbourne.</p>
+            </div>
+            <div class="newsletter">
+              <h4>Newsletter</h4>
+              <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="newsletter-form">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button class="btn" type="submit">Subscribe</button>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Newsletter Signup!">
+                <input type="hidden" name="_next" value="https://yourdomain.com/newsletter.html?subscribed=true">
+              </form>
+              <div id="newsletter-popup" class="popup-message">Thank you for subscribing! 🎉</div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Sunday Warwickshire Walton Hall Hotel & Spa. All rights reserved.</p>
+            <ul class="footer-legal">
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms & Conditions</a></li>
+                <li><a href="#sitemap">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('subscribed') === 'true') {
+      const popup = document.getElementById('newsletter-popup');
+      if (popup) {
+        popup.style.display = 'block';
+        setTimeout(() => popup.style.display = 'none', 5000);
+      }
+    }
+
+    // Image Popup Functionality
+    const popup = document.getElementById('imagePopup');
+    const bedroomImage = document.getElementById('bedroomImage');
+    const bathroomImage = document.getElementById('bathroomImage');
+    const closePopup = document.getElementById('closePopup');
+    const images = document.querySelectorAll('.room-image img');
+
+    images.forEach(image => {
+      image.addEventListener('click', () => {
+        const bedroomSrc = image.getAttribute('data-bedroom-src');
+        const bathroomSrc = image.getAttribute('data-bathroom-src');
+        if (bedroomSrc && bathroomSrc) {
+          bedroomImage.src = bedroomSrc;
+          bathroomImage.src = bathroomSrc;
+          popup.classList.add('show');
+        } else {
+          console.error('Missing image sources:', { bedroomSrc, bathroomSrc });
+        }
+      });
+
+      // Error handling for image loading
+      bedroomImage.addEventListener('error', () => {
+        console.error('Failed to load bedroom image:', bedroomImage.src);
+        bedroomImage.src = 'images/fallback.jpg'; // Fallback image if available
+      });
+      bathroomImage.addEventListener('error', () => {
+        console.error('Failed to load bathroom image:', bathroomImage.src);
+        bathroomImage.src = 'images/fallback.jpg'; // Fallback image if available
+      });
+    });
+
+    closePopup.addEventListener('click', () => {
+      popup.classList.remove('show');
+      bedroomImage.src = '';
+      bathroomImage.src = '';
+    });
+
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.classList.remove('show');
+        bedroomImage.src = '';
+        bathroomImage.src = '';
+      }
+    });
+
+    // Accessibility: Close popup with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && popup.classList.contains('show')) {
+        popup.classList.remove('show');
+        bedroomImage.src = '';
+        bathroomImage.src = '';
+      }
+    });
+  });
+</script>
+</body>
+</html>
