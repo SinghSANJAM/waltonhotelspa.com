@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christmas at Walton Hall | Sunday Warwickshire Walton Hall Hotel & Spa</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --deep-red: #d4b78f;
+      --snow-white: #F8F1F1;
+      --pine-green: #2e4033;
+      --frost-blue: #E6F0FA;
+      --gold: #FFD700;
+      --holly-red: #9a7d57;
+      --silver: #C0C0C0;
+
+
+      
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: var(--frost-blue);
+      color: var(--pine-green);
+      background-image: url('https://www.transparenttextures.com/patterns/snow.png');
+      overscroll-behavior: none;
+      line-height: 1.6;
+    }
+
+    /* Hero section */
+    .hero.christmas-hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--snow-white);
+      overflow: hidden;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/christmas/Christmas Hotel Reception.jpg') no-repeat center/cover;
+    object-fit: fill;
+    }
+    .hero-bg-image {
+      display: none; /* Replaced with background image in .hero */
+      object-fit: fill;
+    }
+    .hero-gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+      transform: translateY(-10%);
+    }
+    .hero-content h1 {
+      font-family: 'Mountains of Christmas', cursive;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+    .hero-content p {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8rem;
+      color: var(--snow-white);
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      line-height: 1.8;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      margin: 1.5rem 0;
+    }
+    .btn-accent {
+      background: var(--holly-red);
+      color: var(--snow-white);
+      border: 2px solid var(--gold);
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Mountains of Christmas', cursive;
+      font-weight: 700;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .btn-accent:hover {
+      background: var(--gold);
+      color: var(--pine-green);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Supporting sections */
+    .section {
+      padding: 5rem 2rem;
+      background: var(--snow-white);
+      position: relative;
+      z-index: 2;
+      margin: 2rem 0;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(255, 215, 0, 0.05), rgba(178, 34, 34, 0.05));
+      z-index: -1;
+    }
+    .section-header h2 {
+      font-family: 'Mountains of Christmas', cursive;
+      font-size: 3rem;
+      color: var(--pine-green);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+    .section-header h2::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0.5rem auto;
+      border-radius: 2px;
+    }
+    .section-header p {
+      font-size: 1.3rem;
+      color: var(--pine-green);
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      line-height: 1.8;
+    }
+    .text-image-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    .text-image-row .text, .text-image-row .image {
+      flex: 1 1 350px;
+      max-width: 650px;
+    }
+    .text-image-row .text p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--pine-green);
+    }
+    .text-image-row img {
+      width: 100%;
+      height: auto;
+      max-height: 450px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border: 3px solid var(--gold);
+    }
+    .text-image-row img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Countdown */
+    .countdown {
+      background: var(--pine-green);
+      color: var(--snow-white);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      margin: 3rem auto;
+      max-width: 700px;
+      font-family: 'Mountains of Christmas', cursive;
+      font-size: 1.8rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    .countdown::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.1), transparent);
+      z-index: -1;
+    }
+    .countdown span {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 2rem;
+      margin: 0 0.5rem;
+    }
+
+    /* Festive icons */
+    .festive-icon {
+      color: var(--holly-red);
+      margin: 0 0.7rem;
+      font-size: 1.5rem;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* Modal/popup */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(6px);
+    }
+    .modal-content {
+      background: var(--snow-white);
+      color: var(--pine-green);
+      padding: 3rem;
+      border-radius: 20px;
+      max-width: 500px;
+      margin: 15% auto;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      position: relative;
+      border: 3px solid var(--gold);
+    }
+    .modal-content h2 {
+      font-family: 'Mountains of Christmas', cursive;
+      font-size: 2.5rem;
+      margin-top: 0;
+      color: var(--holly-red);
+    }
+    .modal-content p {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+      color: var(--pine-green);
+      line-height: 1.8;
+    }
+    .modal-close {
+      background: var(--holly-red);
+      color: var(--snow-white);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    .modal-close:hover {
+      background: var(--gold);
+      color: var(--pine-green);
+      transform: rotate(90deg);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content {
+        padding: 2rem;
+        transform: translateY(0);
+      }
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+      .hero-content p {
+        font-size: 1.4rem;
+        padding: 0.8rem 1.5rem;
+      }
+      .section {
+        padding: 3rem 1.5rem;
+        margin: 1rem;
+      }
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+      .section-header p {
+        font-size: 1.1rem;
+      }
+      .text-image-row {
+        gap: 1.5rem;
+      }
+      .text-image-row .text, .text-image-row .image {
+        flex: 1 1 100%;
+      }
+      .countdown {
+        font-size: 1.4rem;
+        padding: 1.5rem;
+      }
+      .countdown span {
+        font-size: 1.8rem;
+      }
+      .modal-content {
+        margin: 30% auto;
+        padding: 2rem;
+        max-width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      .btn-accent {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+      }
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+      .countdown {
+        font-size: 1.2rem;
+      }
+      .countdown span {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/index/output-onlinepngtools.png" alt="Walton Hall Hotel & Spa Logo" />
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <!-- About Dropdown -->
+          <li class="dropdown">
+            <a href="#">About</a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+
+          <li><a href="rooms.html">Rooms</a></li>
+
+          <!-- Meetings & Events Dropdown -->
+          <li class="dropdown">
+            <a href="#">Meetings & Events</a>
+            <ul class="dropdown-menu">
+              <li><a href="meetings.html">Meetings</a></li>
+              <li><a href="events.html">Special Events</a></li>
+              <li><a href="exclusivehire.html">Exclusive Hire</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="christmas.html">Christmas</a></li>
+          <li><a href="https://www.vagaro.com/uk01/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVKOUWVD15XSjc0gHFQa+P52nY+71mFX0UTTLeFv6B/FsabAs5cyoxouVJ60ZqQreei4m10nSaBpIXspPkhGQ/bJvzB1+SM376okjrvm1iXOQN4Sh5OqN1JT/Gv7gHLI7EyEwXD7h9VIl7VaIdESKqY/cjk/3zwEUNX9esZhExOmTykWoApKMIcc1GOlrdZeoBVW4xe209AERY8uH28fOwBk+o+abcPS584y+nIS8nWDEzUlLns3xnzgcUNfwFUSX3LqQzqg9tVzlt1cwVnSpNaHQIZabCnsP+ZiT2ofUrKGARubyMynKnepGE8e38Ncrv3Vm7s27EDJ4QIJ6JXMJ0cVqlrWu9+BKpLFYFuBTn5nwrEbdgtsFCRNOidcFiFtRHtv1UMQ/Zg6aQzTx74FCkaAKSGtmdiW72TS6hUPx9bN7QG5P7fBR1hZf5h2Oi7kEIw==" target="_blank" rel="noopener noreferrer">Spa</a></li>
+        </ul>
+      </nav>
+
+      <!-- Booking Button -->
+      <div class="booking-button">
+        <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+      </div>
+
+      <!-- Mobile Menu (optional toggle logic can be added) -->
+      <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero christmas-hero">
+    <div class="hero-gradient-overlay"></div>
+    <div class="hero-content">
+      <h1>Celebrate the Magic of Christmas <i class="fas fa-tree festive-icon"></i></h1>
+      <p>Make this festive season unforgettable at Walton Hall</p>
+      <button class="btn-accent" onclick="location.href='contact.html'">Enquire Now <i class="fas fa-gift festive-icon"></i></button>
+    </div>
+    <div id="snowflakes-container"></div>
+  </section>
+
+  <div id="countdown" class="countdown">
+    <span id="days"></span> Days <span id="hours"></span> Hours <span id="minutes"></span> Minutes <span id="seconds"></span> Seconds until Christmas!
+  </div>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Christmas at Walton Hall <i class="fas fa-candy-cane festive-icon"></i></h2>
+      <p>Whether it's a short winter break or a glittering night of fun, we have everything to make this Christmas special.</p>
+    </div>
+    <div class="text-image-row">
+      <div class="text" data-aos="fade-right">
+        <p>Sunday Warwickshire Walton Hall Hotel & Spa offers the perfect setting for a memorable Christmas and New Year. We have a wonderful selection of ideas for your perfect Christmas. Whether you're looking for a relaxing short break, mouth watering festive menus with all the trimmings, or sparkling nights of fun celebrations with friends or colleagues – make sure you enjoy them with us.</p>
+      </div>
+      <div class="image" data-aos="fade-left">
+        <img src="images/christmas/christmas.jpg" alt="Festive Walton Hall" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>All That Sparkles Party Nights <i class="fas fa-glass-cheers festive-icon"></i></h2>
+      <p>Begin your festive season celebrating in style at Walton’s All That Sparkles Party Night.</p>
+    </div>
+    <div class="text-image-row">
+      <div class="image" data-aos="fade-right">
+        <img src="images/christmas/Directors Suite Dinner.jpg" alt="Christmas party at Walton Hall" loading="lazy" />
+      </div>
+      <div class="text" data-aos="fade-left">
+        <p>The perfect festive party night for you, your friends and colleagues! The build-up to Christmas is just as magical as the main event. Sit back, relax and enjoy a prosecco or two as you party the night away. Begin your festive season celebrating in style at Walton’s All That Sparkles Party Night. A chance to look sharp, while enjoying a mouth watering Christmas meal and afterwards dancing to great music - it’ll be a memory that lasts for more than just the festive period.</p>
+        <p>Available for private parties of 50 or more. Attending a Christmas Party, why not make a weekend and stay with us? Dress to impress and prepare to sparkle!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Stay the Night <i class="fas fa-bed festive-icon"></i></h2>
+      <p>Extend the celebration with a luxurious stay at Walton Hall</p>
+    </div>
+    <div class="text-image-row">
+      <div class="text" data-aos="fade-right">
+        <p>Why not turn your Christmas party into a festive getaway? Arrive in the afternoon, take your time to get ready, party the night away and then have a leisurely breakfast before you leave.</p>
+        <p>Limited rooms available and can only be booked once deposits are paid. Upgraded bedrooms available at a supplement.</p>
+      </div>
+      <div class="image" data-aos="fade-left">
+        <img src="images/christmas/Hall Exterior Day 4 (1).jpg" alt="Cozy Christmas Room" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Magical Winter Weddings <i class="fas fa-ring festive-icon"></i></h2>
+      <p>Let us make your winter wedding fantasy a reality</p>
+    </div>
+    <div class="text-image-row">
+      <div class="text" data-aos="fade-right">
+        <p>We’ll make your winter wedding fantasy a reality. Expect a fairy-tale setting and a sprinkling of magic to create memories that last a lifetime.</p>
+        <button class="btn-accent" onclick="location.href='weddings.html'">Enquire Now <i class="fas fa-heart festive-icon"></i></button>
+      </div>
+      <div class="image" data-aos="fade-left">
+        <img src="images/christmas/hero3.jpg" alt="Winter Wedding at Walton Hall" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <div id="christmas-popup" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="document.getElementById('christmas-popup').style.display='none'">×</button>
+      <h2>Merry Christmas from Walton Hall! <i class="fas fa-tree festive-icon"></i></h2>
+      <p>Enjoy the festive season with us. Book your stay and receive a complimentary festive treat!</p>
+      <button class="btn-accent" onclick="location.href='contact.html'">Enquire Now <i class="fas fa-gift festive-icon"></i></button>
+    </div>
+  </div>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+        <div class="footer-columns">
+            <div class="footer-column">
+              <li>
+                <a href="contact.html" class="footer-button">Contact Us</a>
+              </li>
+                <address>
+                    Sunday Warwickshire Walton Hall Hotel & Spa<br>
+                    Walton, Wellesbourne, CV35 9HG<br>
+                    <a href="tel:+441789842424">+44 01789 842424</a><br>
+                    <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a>
+                </address>
+            </div>
+            <div class="footer-column">
+                <h4>Getting Here</h4>
+                <p>From the M40 (South), exit at junction 15. Take the fourth exit onto the A429 to Cirencester. Continue through Barford and turn left at the roundabout for Wellesbourne.</p>
+            </div>
+            <div class="newsletter">
+              <h4>Newsletter</h4>
+              <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="newsletter-form">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button class="btn" type="submit">Subscribe</button>
+                <!-- Settings -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Newsletter Signup!">
+                <input type="hidden" name="_next" value="https://yourdomain.com/newsletter.html?subscribed=true">
+              </form>
+              <div id="newsletter-popup" class="popup-message">Thank you for subscribing! 🎉</div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Sunday Warwickshire Walton Hall Hotel & Spa. All rights reserved.</p>
+            <ul class="footer-legal">
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms & Conditions</a></li>
+                <li><a href="#sitemap">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1200, once: true });
+
+    // Christmas Countdown
+    function updateCountdown() {
+      const now = new Date();
+      const christmas = new Date(now.getFullYear(), 11, 25);
+      if (now.getMonth() === 11 && now.getDate() > 25) christmas.setFullYear(christmas.getFullYear() + 1);
+      const diff = christmas - now;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Show popup on load
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById('christmas-popup').style.display = 'block';
+      }, 1000);
+    };
+
+    // Dynamic Snowfall
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.innerHTML = '❄️';
+      snowflake.style.position = 'absolute';
+      snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+      snowflake.style.top = '-30px';
+      snowflake.style.left = Math.random() * window.innerWidth + 'px';
+      snowflake.style.opacity = Math.random() * 0.7 + 0.3;
+      snowflake.style.zIndex = 4;
+      snowflake.style.pointerEvents = 'none';
+      snowflake.style.userSelect = 'none';
+      document.getElementById('snowflakes-container').appendChild(snowflake);
+
+      let posY = -30;
+      let posX = parseFloat(snowflake.style.left);
+      const speed = Math.random() * 2 + 1;
+      const sway = Math.random() * 2 - 1;
+
+      function animate() {
+        posY += speed;
+        posX += sway * Math.sin(posY / 100);
+        snowflake.style.top = posY + 'px';
+        snowflake.style.left = posX + 'px';
+        if (posY > window.innerHeight) {
+          snowflake.remove();
+        } else {
+          requestAnimationFrame(animate);
+        }
+      }
+      animate();
+    }
+
+    // Create snowflakes
+    for (let i = 0; i < 50; i++) {
+      setTimeout(createSnowflake, i * 300);
+    }
+    setInterval(function() {
+      createSnowflake();
+    }, 500);
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('subscribed') === 'true') {
+        const popup = document.getElementById('newsletter-popup');
+        if (popup) {
+          popup.style.display = 'block';
+          setTimeout(() => popup.style.display = 'none', 5000);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

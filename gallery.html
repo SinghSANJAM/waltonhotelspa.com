@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Sunday Warwickshire Walton Hall Hotel & Spa</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --primary: #9a7d57;
+      --bg: #f8f1e9;
+      --text: #2e4033;
+      --accent: #d4b78f;
+      --shadow: 0 6px 24px rgba(0,0,0,0.12);
+
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      margin: 0;
+    }
+    .gallery-section .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 2.5rem;
+      font-family: 'Dancing Script', cursive, serif;
+      letter-spacing: 1px;
+    }
+    .gallery-label {
+      font-size: 1.4rem;
+      color: var(--text);
+      margin: 2.5rem 0 1rem 0;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-align: left;
+      padding-left: 0.2em;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .gallery-grid img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s;
+      background: #fff;
+      position: relative;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.17);
+      z-index: 2;
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(30,30,30,0.95);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      animation: fadeIn 0.3s;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      background: #fff;
+      margin-bottom: 2rem;
+      animation: popIn 0.4s;
+    }
+    .lightbox-close {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      border-radius: 50%;
+      width: 48px; height: 48px;
+      position: absolute;
+      top: 40px; right: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      transition: background 0.2s, transform 0.2s;
+      z-index: 10001;
+    }
+    .lightbox-close:hover {
+      background: var(--accent);
+      color: var(--primary);
+      transform: scale(1.1) rotate(180deg);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes popIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    @media (max-width: 768px) {
+      .section-title { font-size: 2rem; }
+      .gallery-label { font-size: 1.1rem; }
+      .lightbox-close { top: 16px; right: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER: DO NOT EDIT -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/index/output-onlinepngtools.png" alt="Walton Hall Hotel & Spa Logo" />
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <!-- About Dropdown -->
+          <li class="dropdown">
+            <a href="#">About</a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+
+          <li><a href="rooms.html">Rooms</a></li>
+
+          <!-- Meetings & Events Dropdown -->
+          <li class="dropdown">
+            <a href="#">Meetings & Events</a>
+            <ul class="dropdown-menu">
+              <li><a href="meetings.html">Meetings</a></li>
+              <li><a href="events.html">Special Events</a></li>
+              <li><a href="exclusivehire.html">Exclusive Hire</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="christmas.html">Christmas</a></li>
+          <li><a href="https://www.vagaro.com/uk01/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVKOUWVD15XSjc0gHFQa+P52nY+71mFX0UTTLeFv6B/FsabAs5cyoxouVJ60ZqQreei4m10nSaBpIXspPkhGQ/bJvzB1+SM376okjrvm1iXOQN4Sh5OqN1JT/Gv7gHLI7EyEwXD7h9VIl7VaIdESKqY/cjk/3zwEUNX9esZhExOmTykWoApKMIcc1GOlrdZeoBVW4xe209AERY8uH28fOwBk+o+abcPS584y+nIS8nWDEzUlLns3xnzgcUNfwFUSX3LqQzqg9tVzlt1cwVnSpNaHQIZabCnsP+ZiT2ofUrKGARubyMynKnepGE8e38Ncrv3Vm7s27EDJ4QIJ6JXMJ0cVqlrWu9+BKpLFYFuBTn5nwrEbdgtsFCRNOidcFiFtRHtv1UMQ/Zg6aQzTx74FCkaAKSGtmdiW72TS6hUPx9bN7QG5P7fBR1hZf5h2Oi7kEIw==" target="_blank" rel="noopener noreferrer">Spa</a></li>
+        </ul>
+      </nav>
+
+      <!-- Booking Button -->
+      <div class="booking-button">
+        <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+      </div>
+
+      <!-- Mobile Menu (optional toggle logic can be added) -->
+      <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+  <section style="height: 100px;"></section>
+
+  <!-- GALLERY SECTION -->
+  <section class="gallery-section">
+    <div class="container">
+      <h2 class="section-title">Gallery</h2>
+
+      <div class="gallery-label">Facade</div>
+      <div class="gallery-grid" data-aos="fade-up">
+        <img src="images/gallery/1.jpg" alt="Facade 1">
+        <img src="images/gallery/2.jpg" alt="Facade 2">
+        <img src="images/gallery/3.jpg" alt="Facade 3">
+        <img src="images/gallery/4.jpg" alt="Facade 4">
+        <img src="images/gallery/5.jpg" alt="Facade 5">
+        <img src="images/gallery/6.png" alt="Facade 6">
+      </div>
+      <div class="gallery-label">Lobby</div>
+      <div class="gallery-grid" data-aos="fade-up">
+        <img src="images/gallery/7.jpg" alt="Lobby 1">
+        <img src="images/gallery/8.jpg" alt="Lobby 2">
+        <img src="images/gallery/9.jpg" alt="Lobby 3">
+        <img src="images/gallery/10.jpg" alt="Lobby 4">
+        <img src="images/gallery/11.jpg" alt="Lobby 5">
+        <img src="images/gallery/12.jpg" alt="Lobby 6">
+      </div>
+      <div class="gallery-label">Reception</div>
+      <div class="gallery-grid" data-aos="fade-up">
+        <img src="images/gallery/13.jpg" alt="Reception 1">
+        <img src="images/gallery/14.jpg" alt="Reception 2">
+        <img src="images/gallery/15.jpg" alt="Reception 3">
+        <img src="images/gallery/16.jpg" alt="Reception 4">
+        <img src="images/gallery/17.jpg" alt="Reception 5">
+        <img src="images/gallery/18.jpg" alt="Reception 6">
+        <img src="images/gallery/19.png" alt="Reception 7">
+      </div>
+      <div class="gallery-label">Room</div>
+      <div class="gallery-grid" data-aos="fade-up">
+        <img src="images/accomodation/suite 1.jpg" alt="Room 1">
+        <img src="images/accomodation/Hall Superior Bedroom 3 (2).jpg" alt="Room 2">
+        <img src="images/accomodation/Apartment.jpg" alt="Room 3">
+      </div>
+      <div class="gallery-label">Washroom</div>
+      <div class="gallery-grid" data-aos="fade-up">
+        <img src="images/accomodation/Hotel Privilege Accessible Wetroom.jpg" alt="Washroom 1">
+        <img src="images/accomodation/suite 2.jpg" alt="Washroom 2">
+        <img src="images/accomodation/Hall Superior Bedroom Bath (2).jpg" alt="Washroom 3">
+      </div>
+      <div class="gallery-label">Meeting rooms</div>
+      <div class="gallery-grid" data-aos="fade-up">
+        <img src="images/gallery/20.jpg" alt="Meeting room 1">
+        <img src="images/gallery/21.jpg" alt="Meeting Room 2">
+        <img src="images/gallery/22.jpg" alt="Meeting Room 3">
+        <img src="images/gallery/23.jpg" alt="Meeting Room 4">
+      </div>
+      <div class="gallery-label">Banquets</div>
+      <div class="gallery-grid" data-aos="fade-up">
+        <img src="images/banquet/Moncrieffe Banqueting 11.jpg" alt="Banquet 1">
+        <img src="images/banquet/Mordaunt Banquet.jpg" alt="Banquet 2">
+        <img src="images/banquet/Courtyard Banquet (1).png" alt="Banquet 3">
+      </div>
+    </div>
+    <!-- Lightbox Popup -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fa fa-times"></i></button>
+      <img src="" alt="Gallery Image" id="lightboxImg">
+    </div>
+  </section>
+  <!-- FOOTER: DO NOT EDIT -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <li>
+            <a href="contact.html" class="footer-button">Contact Us</a>
+          </li>
+          <address>
+            Sunday Warwickshire Walton Hall Hotel & Spa<br>
+            Walton, Wellesbourne, CV35 9HG<br>
+            <a href="tel:+441789842424">+44 01789 842424</a><br>
+            <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a>
+          </address>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Getting Here</h4>
+          <p>From the M40 (South), exit at junction 15. Take the fourth exit onto the A429 to Cirencester. Continue through Barford and turn left at the roundabout for Wellesbourne.</p>
+        </div>
+        
+        <div class="newsletter">
+          <h4>Newsletter</h4>
+          <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="newsletter-form">
+            <input type="email" name="email" placeholder="Your email address" required>
+            <button class="btn" type="submit">Subscribe</button>
+            <!-- Settings -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Newsletter Signup!">
+            <input type="hidden" name="_next" value="https://yourdomain.com/newsletter.html?subscribed=true">
+          </form>
+          <div id="newsletter-popup" class="popup-message">Thank you for subscribing! 🎉</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Sunday Warwickshire Walton Hall Hotel & Spa. All rights reserved.</p>
+        <ul class="footer-legal">
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms & Conditions</a></li>
+          <li><a href="#sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    // Lightbox functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('.gallery-grid img');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const closeBtn = document.getElementById('lightboxClose');
+
+      images.forEach(img => {
+        img.addEventListener('click', function() {
+          lightboxImg.src = this.src;
+          lightboxImg.alt = this.alt;
+          lightbox.classList.add('active');
+        });
+      });
+
+      closeBtn.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        lightboxImg.alt = '';
+      });
+
+      // Close on backdrop click
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          lightbox.classList.remove('active');
+          lightboxImg.src = '';
+          lightboxImg.alt = '';
+        }
+      });
+
+      // Close on ESC key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          lightbox.classList.remove('active');
+          lightboxImg.src = '';
+          lightboxImg.alt = '';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
