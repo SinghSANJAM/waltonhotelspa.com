@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Sunday Warwickshire Walton Hall Hotel & Spa</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #fdf6ee 0%, #f2e6d8 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+    }
+
+   
+  </style>
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header 
+
+   class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="output-onlinepngtools.png" alt="Walton Hall Hotel & Spa Logo" />
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <!-- About Dropdown -->
+          <li class="dropdown">
+            <a href="#">About</a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+
+          <li><a href="rooms.html">Rooms</a></li>
+
+          <!-- Meetings & Events Dropdown -->
+          <li class="dropdown">
+            <a href="#">Meetings & Events</a>
+            <ul class="dropdown-menu">
+              <li><a href="meetings.html">Meetings</a></li>
+              <li><a href="events.html">Special Events</a></li>
+              <li><a href="exclusivehire.html">Exclusive Hire</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="christmas.html">Christmas</a></li>
+          <li><a href="https://www.vagaro.com/uk01/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVKOUWVD15XSjc0gHFQa+P52nY+71mFX0UTTLeFv6B/FsabAs5cyoxouVJ60ZqQreei4m10nSaBpIXspPkhGQ/bJvzB1+SM376okjrvm1iXOQN4Sh5OqN1JT/Gv7gHLI7EyEwXD7h9VIl7VaIdESKqY/cjk/3zwEUNX9esZhExOmTykWoApKMIcc1GOlrdZeoBVW4xe209AERY8uH28fOwBk+o+abcPS584y+nIS8nWDEzUlLns3xnzgcUNfwFUSX3LqQzqg9tVzlt1cwVnSpNaHQIZabCnsP+ZiT2ofUrKGARubyMynKnepGE8e38Ncrv3Vm7s27EDJ4QIJ6JXMJ0cVqlrWu9+BKpLFYFuBTn5nwrEbdgtsFCRNOidcFiFtRHtv1UMQ/Zg6aQzTx74FCkaAKSGtmdiW72TS6hUPx9bN7QG5P7fBR1hZf5h2Oi7kEIw==" target="_blank" rel="noopener noreferrer">Spa</a></li>
+        </ul>
+      </nav>
+
+      <!-- Booking Button -->
+      <div class="booking-button">
+        <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+      </div>
+
+      <!-- Mobile Menu (optional toggle logic can be added) -->
+      <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Contact Page Content -->
+  <main class="contact-page">
+    <h1>Contact Us</h1>
+    <form class="contact-form" action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" enctype="text/plain">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="Name" required>
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="Email" required>
+
+      <label for="mobile">Mobile *</label>
+      <input type="tel" id="mobile" name="Mobile" required>
+
+      <label for="event">Nature of Event</label>
+      <select id="event" name="Event Type">
+        <option value="">Select</option>
+        <option>Wedding</option>
+        <option>Corporate Event</option>
+        <option>Private Dining</option>
+        <option>Other</option>
+      </select>
+
+      <label for="guests">Number of Guests</label>
+      <input type="number" id="guests" name="Guests">
+
+      <label for="date">Requested Date</label>
+      <input type="date" id="date" name="Requested Date">
+
+      <label for="comment">Comments</label>
+      <textarea id="comment" name="Comments" placeholder="Any special requests or queries..."></textarea>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="marketing" name="Marketing Permission">
+        <label for="marketing">I would like to receive marketing emails and offers.</label>
+      </div>
+
+      <button type="submit" class="btn-primary">Send Enquiry</button>
+    </form>
+  </main>
+  <!-- Footer Start -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+        <div class="footer-columns">
+            <div class="footer-column">
+           
+              <li>
+                <a href="contact.html" class="footer-button">Contact Us</a>
+              </li>
+          
+                <address>
+                    Sunday Warwickshire Walton Hall Hotel & Spa<br>
+                    Walton, Wellesbourne, CV35 9HG<br>
+                    <a href="tel:+441789842424">+44 01789 842424</a><br>
+                    <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a>
+                </address>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Getting Here</h4>
+                <p>From the M40 (South), exit at junction 15. Take the fourth exit onto the A429 to Cirencester. Continue through Barford and turn left at the roundabout for Wellesbourne.</p>
+            </div>
+            
+            <div class="newsletter">
+              <h4>Newsletter</h4>
+              <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="newsletter-form">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button class="btn" type="submit">Subscribe</button>
+            
+                <!-- Settings -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Newsletter Signup!">
+                <input type="hidden" name="_next" value="https://yourdomain.com/newsletter.html?subscribed=true">
+              </form>
+            
+              <div id="newsletter-popup" class="popup-message">Thank you for subscribing! 🎉</div>
+            </div>
+            
+            
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sunday Warwickshire Walton Hall Hotel & Spa. All rights reserved.</p>
+            <ul class="footer-legal">
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms & Conditions</a></li>
+                <li><a href="#sitemap">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+  <!-- Footer End -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('subscribed') === 'true') {
+      const popup = document.getElementById('newsletter-popup');
+      if (popup) {
+        popup.style.display = 'block';
+        // Optional: hide after 5 seconds
+        setTimeout(() => popup.style.display = 'none', 5000);
+      }
+    }
+  });
+  </script>
+  
+
+</body>
+</html>

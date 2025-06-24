@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmlogics | Rent Premium Farming Vehicles</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #254D32;
+      --accent: #CDA434;
+      --light: #FAF9F6;
+      --dark: #1e1e1e;
+      --font-head: 'Playfair Display', serif;
+      --font-body: 'Poppins', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header.navbar {
+      background-color: rgba(37, 77, 50, 0.9);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      font-weight: 500;
+    }
+
+    nav ul li .btn {
+      background-color: var(--accent);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      color: var(--dark);
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1611080626919-5c487d5fa5be') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .hero-text {
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-family: var(--font-head);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn, .btn-book {
+      background-color: var(--accent);
+      color: var(--dark);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover, .btn-book:hover {
+      background-color: #b2922f;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    h2 {
+      font-family: var(--font-head);
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--primary);
+    }
+
+    .vehicle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+
+    .vehicle-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .vehicle-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .vehicle-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .vehicle-card h3 {
+      padding: 0.5rem 1rem 0 1rem;
+      font-family: var(--font-head);
+    }
+
+    .vehicle-card p {
+      padding: 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .vehicle-card .price {
+      font-weight: bold;
+      color: var(--primary);
+      margin: 0.5rem 1rem;
+    }
+
+    .vehicle-card button {
+      margin: 1rem;
+      width: calc(100% - 2rem);
+    }
+
+    .how-it-works .steps {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      background: var(--primary);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      min-width: 180px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: auto;
+      gap: 1rem;
+    }
+
+    .contact input, .contact textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: var(--font-body);
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">Farmlogics</div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#vehicles">Vehicles</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#login" class="btn">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Empowering India's Farmers</h1>
+      <p>Rent premium farming vehicles. Fast. Reliable. Affordable.</p>
+      <a href="#vehicles" class="btn btn-primary">Browse Vehicles</a>
+    </div>
+  </section>
+
+  <section class="vehicles" id="vehicles">
+    <h2>Available Vehicles</h2>
+    <div class="vehicle-grid">
+      <div class="vehicle-card">
+        <img src="https://via.placeholder.com/400x250" alt="Tractor">
+        <h3>Mahindra 575 DI</h3>
+        <p>55 HP | Diesel | Manual</p>
+        <p class="price">₹1500/day</p>
+        <button class="btn-book" onclick="bookNow('Mahindra 575 DI')">Rent Now</button>
+      </div>
+      <div class="vehicle-card">
+        <img src="https://via.placeholder.com/400x250" alt="Harvester">
+        <h3>John Deere Harvester</h3>
+        <p>120 HP | Auto | Diesel</p>
+        <p class="price">₹3500/day</p>
+        <button class="btn-book" onclick="bookNow('John Deere Harvester')">Rent Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works" id="how">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">Search</div>
+      <div class="step">Book</div>
+      <div class="step">Delivered</div>
+      <div class="step">Return</div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Farmlogics. Made in India.</p>
+    </div>
+  </footer>
+
+  <script>
+    function bookNow(vehicleName) {
+      alert('Thank you for choosing ' + vehicleName + '! Our team will contact you shortly.');
+    }
+
+    document.getElementById(\"contactForm\").addEventListener(\"submit\", function(e) {
+      e.preventDefault();
+      alert(\"Thank you for your message! We'll get back to you soon.\");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

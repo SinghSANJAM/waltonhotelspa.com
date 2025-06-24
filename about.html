@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Sunday Warwickshire Walton Hall Hotel & Spa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora&display=swap" rel="stylesheet" />
+  <style>
+    /* Carousel Section */
+    .carousel-section {
+      width: 100%;
+      margin: 4rem 0; /* Added top and bottom margin */
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+    }
+
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+    }
+
+    /* Navigation Arrows */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      user-select: none;
+      z-index: 10;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    /* Control Dots */
+    .carousel-dots {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .carousel-dot.active {
+      background: white;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .carousel-container {
+        height: 300px;
+      }
+
+      .carousel-arrow {
+        font-size: 1.5rem;
+        padding: 0.3rem 0.8rem;
+      }
+
+      .carousel-dot {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/index/output-onlinepngtools.png" alt="Walton Hall Hotel & Spa Logo" />
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="main-navigation">
+        <ul class="nav-menu">
+          <!-- About Dropdown -->
+          <li class="dropdown">
+            <a href="#">About</a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+
+          <li><a href="rooms.html">Rooms</a></li>
+
+          <!-- Meetings & Events Dropdown -->
+          <li class="dropdown">
+            <a href="#">Meetings & Events</a>
+            <ul class="dropdown-menu">
+              <li><a href="meetings.html">Meetings</a></li>
+              <li><a href="events.html">Special Events</a></li>
+              <li><a href="exclusivehire.html">Exclusive Hire</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="christmas.html">Christmas</a></li>
+          <li><a href="https://www.vagaro.com/uk01/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVKOUWVD15XSjc0gHFQa+P52nY+71mFX0UTTLeFv6B/FsabAs5cyoxouVJ60ZqQreei4m10nSaBpIXspPkhGQ/bJvzB1+SM376okjrvm1iXOQN4Sh5OqN1JT/Gv7gHLI7EyEwXD7h9VIl7VaIdESKqY/cjk/3zwEUNX9esZhExOmTykWoApKMIcc1GOlrdZeoBVW4xe209AERY8uH28fOwBk+o+abcPS584y+nIS8nWDEzUlLns3xnzgcUNfwFUSX3LqQzqg9tVzlt1cwVnSpNaHQIZabCnsP+ZiT2ofUrKGARubyMynKnepGE8e38Ncrv3Vm7s27EDJ4QIJ6JXMJ0cVqlrWu9+BKpLFYFuBTn5nwrEbdgtsFCRNOidcFiFtRHtv1UMQ/Zg6aQzTx74FCkaAKSGtmdiW72TS6hUPx9bN7QG5P7fBR1hZf5h2Oi7kEIw==" target="_blank" rel="noopener noreferrer">Spa</a></li>
+        </ul>
+      </nav>
+
+      <!-- Booking Button -->
+      <div class="booking-button">
+        <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <main class="about-section">
+    <div class="about-header">
+      <h2>About Sunday Walton Hall Hotel & Spa</h2>
+      <p>Where timeless history meets modern luxury in the heart of Warwickshire.</p>
+    </div>
+    <!-- Image Carousel Section -->
+    <section class="carousel-section">
+      <div class="carousel-container">
+        <div class="carousel-slide">
+          <img src="images/index/hotel reception.jpg" alt="Hotel Reception" />
+        </div>
+        <div class="carousel-slide">
+          <img src="images/index/Victoria Gardens 3 (1).jpg" alt="Victoria Gardens" />
+        </div>
+        <div class="carousel-slide">
+          <img src="images/index/Moncreiffe Terrace.jpg" alt="Moncreiffe Terrace" />
+        </div>
+        <div class="carousel-slide">
+          <img src="images/index/Hall Drive Way Summer 1 (1).jpg" alt="Hall Drive Way" />
+        </div>
+        <div class="carousel-slide">
+          <img src="images/index/Hall Reception 1 (1).jpg" alt="Hall Reception 1" />
+        </div>
+        <div class="carousel-slide">
+          <img src="images/index/Hall Reception 2 (1).jpg" alt="Hall Reception 2" />
+        </div>
+        <div class="carousel-slide">
+          <img src="images/index/Hall Reception 3.jpg" alt="Hall Reception 3" />
+        </div>
+        <div class="carousel-slide">
+          <img src="images/index/Hall Exterior Day 4 (2).jpg" alt="Hall Exterior" />
+        </div>
+        <!-- Navigation Arrows -->
+        <div class="carousel-arrow arrow-left" onclick="prevSlide()">&#10094;</div>
+        <div class="carousel-arrow arrow-right" onclick="nextSlide()">&#10095;</div>
+        <!-- Control Dots -->
+        <div class="carousel-dots"></div>
+      </div>
+    </section>
+   
+      <div class="hero-text">
+        <h1>Discover Walton Hall & Hotel</h1>
+        <p>
+          The 16th Century Grade II listed, four-star Walton Hall and the modern Walton Hotel are nestled within 65 acres of glorious countryside, overlooking a serene lake. Located near Warwick and Stratford-upon-Avon, just 10 minutes from the M40 and close to Birmingham International Airport, our venue is ideal for both corporate and private events.
+        </p>
+        <p>
+          Enjoy the Orangery Restaurant, 240 free on-site parking spaces, a relaxing health & leisure club with pool, and high-speed fibre optic broadband across the estate.
+        </p>
+      </div>
+    </section>
+
+    
+
+    <div class="about-content">
+      <div class="about-block">
+        <div class="about-text">
+          <h3>Our Storied Heritage</h3>
+          <p>Dating back to the 17th century, Walton Hall’s aristocratic charm is preserved within lush, modern comforts.</p>
+        </div>
+        <div class="about-image">
+          <img src="images/index/welcome.jpg" alt="Walton Hall Exterior" onclick="openModal(this.src)" />
+          <div class="caption">17th-Century Grandeur</div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <div class="about-text">
+          <h3>Our Philosophy</h3>
+          <p>We blend warm hospitality, elegance, and attention to detail into every stay.</p>
+        </div>
+        <div class="about-image">
+          <img src="Hall Night.jpg" alt="Hotel Service" onclick="openModal(this.src)" />
+          <div class="caption">Bespoke Hospitality</div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <div class="about-text">
+          <h3>Luxury & Wellness</h3>
+          <p>Relax in our spa or indulge in fine cuisine — where every experience is curated with care.</p>
+        </div>
+        <div class="about-image">
+          <img src="spa.jpg" alt="Luxury Spa" onclick="openModal(this.src)" />
+          <div class="caption">Serenity & Indulgence</div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <div class="about-text">
+          <h3>Our Location</h3>
+          <p>Set on 65 acres, Walton Hall lies near Stratford-upon-Avon amidst nature, culture, and history.</p>
+        </div>
+        <div class="about-image">
+          <img src="Site.png" alt="Warwickshire Estate" onclick="openModal(this.src)" />
+          <div class="caption">Scenic Warwickshire</div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <div class="about-text">
+          <h3>Getting Here</h3>
+          <p>
+            <strong>By Road:</strong><br>
+            <em>From the North (M40 Junction 13):</em> Exit and turn left, then take the first right. Pass through Newbold Pacey and turn left at the T-junction in Wellesbourne. Continue past the Watermill and follow the single-lane road for 1.5 miles.<br><br>
+            <em>From the South (M40 Junction 15):</em> Exit and take the fourth exit onto the A429 toward Cirencester. Drive through Barford, turn left at the roundabout to Wellesbourne, then turn right after the Watermill and continue for 1.5 miles along the single-lane road.
+          </p>
+      
+          <h3>Dog-Friendly Stays</h3>
+          <p>
+            We believe every family member deserves a getaway — including your four-legged companions. Dogs are welcome for a small additional charge of <strong>£20.00 per room, per stay</strong>. Our dog-friendly accommodations include:
+          </p>
+          <ul>
+            <li>Classic Rooms</li>
+            <li>Privilege Rooms</li>
+            <li>Apartments</li>
+          </ul>
+          <h3></h3>
+          <h3></h3>
+          <h3></h3>
+
+          
+      
+      
+    <h3>Find Us on the Map</h3>
+  </div>
+</div>
+</div>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2447.3502107400844!2d-1.5853166!3d52.1695483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870d2bd4193631f%3A0x49a670a470975fe1!2sWalton%20Hall%20Hotel%20%26%20Spa%20by%20Sunday!5e0!3m2!1sen!2sin!4v1718175409334!5m2!1sen!2sin"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <li>
+            <a href="contact.html" class="footer-button">Contact Us</a>
+          </li>
+          <address>
+            Sunday Warwickshire Walton Hall Hotel & Spa<br>
+            Walton, Wellesbourne, CV35 9HG<br>
+            <a href="tel:+441789842424">+44 01789 842424</a><br>
+            <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a>
+          </address>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Getting Here</h4>
+          <p>From the M40 (South), exit at junction 15. Take the fourth exit onto the A429 to Cirencester. Continue through Barford and turn left at the roundabout for Wellesbourne.</p>
+        </div>
+        
+        <div class="newsletter">
+          <h4>Newsletter</h4>
+          <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="newsletter-form">
+            <input type="email" name="email" placeholder="Your email address" required>
+            <button class="btn" type="submit">Subscribe</button>
+            <!-- Settings -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Newsletter Signup!">
+            <input type="hidden" name="_next" value="https://yourdomain.com/newsletter.html?subscribed=true">
+          </form>
+          <div id="newsletter-popup" class="popup-message">Thank you for subscribing! 🎉</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Sunday Warwickshire Walton Hall Hotel & Spa. All rights reserved.</p>
+        <ul class="footer-legal">
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms & Conditions</a></li>
+          <li><a href="#sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div id="imageModal" class="modal" role="dialog" aria-modal="true">
+    <span class="close" onclick="closeModal()">×</span>
+    <img class="modal-content" id="modalImage" />
+  </div>
+
+  <script>
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.main-navigation');
+    mobileToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    function openModal(src) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      modal.style.display = 'flex';
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('imageModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
+
+    const blocks = document.querySelectorAll('.about-block');
+    const revealOnScroll = () => {
+      blocks.forEach(block => {
+        const top = block.getBoundingClientRect().top;
+        if (top < window.innerHeight * 0.85) {
+          block.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+    
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('subscribed') === 'true') {
+        const popup = document.getElementById('newsletter-popup');
+        if (popup) {
+          popup.style.display = 'block';
+          setTimeout(() => popup.style.display = 'none', 5000);
+        }
+      }
+
+      // Carousel functionality
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dotsContainer = document.querySelector('.carousel-dots');
+      let currentSlide = 0;
+      let slideInterval;
+
+      // Create dots dynamically
+      slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = document.querySelectorAll('.carousel-dot');
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      function goToSlide(index) {
+        currentSlide = index;
+        showSlide(currentSlide);
+        resetInterval();
+      }
+
+      function startInterval() {
+        slideInterval = setInterval(nextSlide, 5000);
+      }
+
+      function resetInterval() {
+        clearInterval(slideInterval);
+        startInterval();
+      }
+
+      if (slides.length > 0) {
+        showSlide(currentSlide);
+        startInterval();
+      }
+    });
+  </script>
+</body>
+</html>

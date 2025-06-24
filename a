@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="english"
+  ><head
+    ><title>exported project</title
+    ><meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    /><meta charset="utf-8" /><meta
+      property="twitter:card"
+      content="summary_large_image"
+    />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;  color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 1000vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+  <body
+    ><link rel="stylesheet" href="./style.css" /><div
+      ><link href="./index.css" rel="stylesheet" /><div
+      
+        class="frame33414-container"
+        ><div class="frame33414-frame33414"
+          ><div class="frame33414-slide1691"
+          
+            ><div class="frame33414-frame991"
+              ><img
+                alt="Frame992921"
+                src="public/external/frame992921-l0b.svg"
+
+                
+                ><button 
+                type="button"
+                class="frame33414-button10"
+                onclick="window.location.href='https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https%3A%2F%2Fwww.oyorooms.com%2Fgb%2F292291%2F';"
+              >
+                <div class="frame33414-label1">
+                  <span class="frame33414-text12 Subtitle1HighEmphasis">Book Now</span>
+                </div>
+             
+                ></button
+
+                class="frame33414-frame992" ><div class="frame33414-menu"
+                 onclick="window.location.href='menu.html';"
+                 >
+                  
+                
+                ><img
+                  alt="frameI2921"
+                  src="public/external/framei2921-ete.svg"
+                  class="frame33414-frame" /></div></div
+            ><div class="frame33414-our-hotels"
+              ><div class="frame33414-frame33465"
+                ><span class="frame33414-text10"
+                  >Walton Hall Hotel &amp; Spa</span
+                ><span class="frame33414-text11 Subtitle1RegularEmphasis"
+                  >A 4-star countryside retreat in a 16th-century manor with bar, spa, pool, gym & dog-friendly stays near Warwick and Stratford-upon-Avon.
+                  </span
+                ></div
+              ><button type="button" class="frame33414-button1"
+                ><div class="frame33414-label1"
+                  ><span class="frame33414-text12 Subtitle1HighEmphasis" onclick="window.location.href='menu.html';">
+                    Discover More </span
+                  ></div
+                ></button
+              ></div
+            ></div
+          ><div class="frame33414-frame33455"
+            ><div class="frame33414-desktop61"
+              ><div class="frame33414-frame334641"
+                ><div class="frame33414-alphsgallery1"
+                  ><img
+                    alt="imageI2921"
+                    src="public/external/imagei2921-o6x-700w.png"
+                    class="frame33414-image10" /></div
+                ><div class="frame33414-frame11"
+                  ><span class="frame33414-text13 H6"
+                    >A tranquil retreat steeped in history and charm</span
+                  ></div
+                ></div
+              ><div class="frame33414-navbar1"
+                ><div class="frame33414-frame334431"
+                  ><div class="frame33414-frame334541"
+                    ><span class="frame33414-text14"
+                      >Escape to Timeless Elegance</span
+                    ><span class="frame33414-text15 Subtitle1RegularEmphasis"
+                      >Escape to elegance at Mercure Warwickshire Walton Hall
+                      Hotel &amp; Spa, nestled in 65 acres of peaceful
+                      countryside. Unwind in historic charm, relax with
+                      indulgent spa treatments, and wake up to sweeping estate
+                      views.</span
+                    ></div
+                  ><button class="frame33414-button2"
+                    ><div class="frame33414-label2"
+                      ><span class="frame33414-text16 Button" onclick="window.location.href='https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https%3A%2F%2Fwww.oyorooms.com%2Fgb%2F292291%2F';">
+                        Book Now</span
+                      ></div
+                    ></button
+                  ></div
+                ></div
+              ></div
+            ></div
+          ><div class="frame33414-frame33393"
+            ><div class="frame33414-frame33408"
+              ><div class="frame33414-card10"
+                ><img
+                  alt="imageI2921"
+                  src="public/external/imagei2921-qm8u-700h.png"
+                  class="frame33414-image11"
+                /><div class="frame33414-text17"
+                  ><span class="frame33414-text18 H4"
+                    >Standard Twin Room</span
+                  ></div
+                ></div
+              ><div class="frame33414-card11"
+                ><img
+                  alt="imageI2921"
+                  src="public/external/imagei2921-jxe9-700h.png"
+                  class="frame33414-image12"
+                /><div class="frame33414-text19"
+                  ><span class="frame33414-text20 H4"
+                    >Superior Twin Room</span
+                  ></div
+                ></div
+              ><div class="frame33414-card12"
+                ><img
+                  alt="imageI2921"
+                  src="public/external/imagei2921-o79h-700h.png"
+                  class="frame33414-image13"
+                /><div class="frame33414-text21"
+                  ><span class="frame33414-text22 H4"
+                    >Superior Double Room</span
+                  ></div
+                ></div
+              ></div
+            ><div class="frame33414-frame33409"
+              ><div class="frame33414-card13"
+                ><img
+                  alt="imageI2921"
+                  src="public/external/imagei2921-xx5-700h.png"
+                  class="frame33414-image14"
+                /><div class="frame33414-text23"
+                  ><span class="frame33414-text24 H4"
+                    >Privileged Double Room</span
+                  ></div
+                ></div
+              ><div class="frame33414-card14"
+                ><img
+                  alt="imageI2921"
+                  src="public/external/imagei2921-t9hp-700h.png"
+                  class="frame33414-image15"
+                /><div class="frame33414-text25"
+                  ><span class="frame33414-text26 H4"
+                    >One-Bedroom Apartment</span
+                  ></div
+                ></div
+              ><div class="frame33414-card15"
+                ><img
+                  alt="imageI2921"
+                  src="public/external/imagei2921-ajtb-700h.png"
+                  class="frame33414-image16"
+                /><div class="frame33414-text27"
+                  ><span class="frame33414-text28 H4"
+                    >Two-Bedroom Apartment</span
+                  ></div
+                ></div
+              ></div
+            ></div
+          ><div class="frame33414-frame33463"
+            ><div class="frame33414-desktop62"
+              ><div class="frame33414-navbar2"
+                ><div class="frame33414-frame334432"
+                  ><div class="frame33414-frame334542"
+                    ><span class="frame33414-text29"
+                      >Explore, Relax and Repeat</span
+                    ><span class="frame33414-text30 Subtitle1RegularEmphasis"
+                      >With nearby attractions like Stratford-upon-Avon, Warwick
+                      Castle, and the Cotswolds, plus thoughtful touches like a
+                      relaxing spa, free parking, and on-site dining, your
+                      idyllic countryside escape begins here.</span
+                    ></div
+                  ><button class="frame33414-button3"
+                    ><div class="frame33414-label3"
+                      ><span class="frame33414-text31 Button"
+                        >Book now</span
+                      ></div
+                    ></button
+                  ></div
+                ></div
+              ><div class="frame33414-frame334642"
+                ><div class="frame33414-alphsgallery2"
+                  ><img
+                    alt="imageI2931"
+                    src="public/external/imagei2931-ghr-700w.png"
+                    class="frame33414-image17" /></div
+                ><div class="frame33414-frame12"
+                  ><span class="frame33414-text32 H6"
+                    >A perfect retreat where classic elegance meets countryside
+                    serenity</span
+                  ></div
+                ></div
+              ></div
+            ></div
+          ><div class="frame33414-frame33459"
+            ><div class="frame33414-frame33460"
+              ><div class="frame33414-frame33410"
+                ><div class="frame33414-card16"
+                  ><img
+                    alt="imageI2921"
+                    src="public/external/imagei2921-nlqx-200h.png"
+                    class="frame33414-image18"
+                  /><div class="frame33414-text33"
+                    ><span class="frame33414-text34 H4">Restaurant</span></div
+                  ></div
+                ><div class="frame33414-card17"
+                  ><img
+                    alt="imageI2921"
+                    src="public/external/imagei2921-rdc7-200h.png"
+                    class="frame33414-image19"
+                  /><div class="frame33414-text35"
+                    ><span class="frame33414-text36 H4"
+                      >Good Breakfast</span
+                    ></div
+                  ></div
+                ><div class="frame33414-card18"
+                  ><img
+                    alt="imageI2921"
+                    src="public/external/imagei2921-r5g-200h.png"
+                    class="frame33414-image20"
+                  /><div class="frame33414-text37"
+                    ><span class="frame33414-text38 H4"
+                      >Indoor Swimming Pool</span
+                    ></div
+                  ></div
+                ></div
+              ><div class="frame33414-frame33411"
+                ><div class="frame33414-card19"
+                  ><img
+                    alt="imageI2921"
+                    src="public/external/imagei2921-9xd-200h.png"
+                    class="frame33414-image21"
+                  /><div class="frame33414-text39"
+                    ><span class="frame33414-text40 H4"
+                      >Spa and Wellness</span
+                    ></div
+                  ></div
+                ><div class="frame33414-card20"
+                  ><img
+                    alt="imageI2921"
+                    src="public/external/imagei2921-q3l-200h.png"
+                    class="frame33414-image22"
+                  /><div class="frame33414-text41"
+                    ><span class="frame33414-text42 H4">Free Wi-fi</span></div
+                  ></div
+                ><div class="frame33414-card21"
+                  ><img
+                    alt="imageI2921"
+                    src="public/external/imagei2921-25dt-200h.png"
+                    class="frame33414-image23"
+                  /><div class="frame33414-text43"
+                    ><span class="frame33414-text44 H4">Pet-Friendly</span></div
+                  ></div
+                ></div
+              ></div
+            ></div
+          ></div
+        ></div
+      ></div
+    >
+  </body></html
+>
+.frame33414-container {
+  width: 100%;
+  display:flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;  
+}
+ 
+.frame33414-frame33414 {
+  gap: 80px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  background-color: rgb(215, 215, 215);
+}
+ 
+.frame33414-slide1691 {
+  width: 100%;
+  height: 813px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0.00%,rgb(0, 0, 0) 0.00%);
+  
+  background-image: url("public/external/New Folder/image-1500w.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  background-attachment: fixed; /* Key for parallax effect */
+
+ 
+  
+  
+}
+ 
+.frame33414-frame991 {
+  gap: 967px;
+  top: 32px;
+  left: 32px;
+  width: 1263px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+  
+}
+ 
+.frame33414-frame992 {
+  width: 117px;
+  height: 53px;
+}
+ 
+.frame33414-menu {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+
+}
+ 
+.frame33414-frame {
+  position:fixed;
+  top: 35px;
+  right: 40px;
+  width: 48px;
+  height: 48px;
+  background-attachment: fixed; /* Key for parallax effect */
+ 
+  
+}
+ 
+.frame33414-our-hotels {
+ 
+ gap:16px;
+  display: flex;
+  position: center;
+  align-self: stretch;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 50px;
+  padding-left: 50px;
+ 
+}
+ 
+.frame33414-frame33465 {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+ 
+.frame33414-text10 {
+  color: white; /* better contrast on dark overlays */
+  font-size: 64px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  line-height: 0.8;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* adds legibility */
+  max-width: 800px;
+}
+ 
+.frame33414-text11 {
+  color: white;
+  font-size: 22px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+  max-width: 860px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+ 
+.frame33414-button1 {
+  display: inline-flex;
+  padding: 12px 30px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(180, 150, 100, 1);
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.frame33414-button1:hover {
+  background-color: rgba(160, 130, 90, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.frame33414-button10:hover {
+  background: linear-gradient(135deg, #a88e5c 0%, #bfa980 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+ 
+.frame33414-label1 {
+  gap: 16px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+}
+ 
+.frame33414-text12 {
+  color: var(--dl-color-theme-secondary1);
+  height: auto;
+  text-align: left;
+  line-height: 24px;
+}
+ 
+.frame33414-frame33455 {
+  gap: 8px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 120px;
+  background-color: white;
+}
+ 
+.frame33414-desktop61 {
+  width: 1200px;
+  display: flex;
+  box-sizing: content-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  justify-content: center;
+  background-color: rgba(33, 33, 33, 1);
+}
+ 
+.frame33414-frame334641 {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+ 
+.frame33414-alphsgallery1 {
+  top: 0px;
+  left: 0px;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  flex-grow: 1;
+  box-sizing: content-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+ 
+.frame33414-image10 {
+  top: 0px;
+  left: 0px;
+  width: 601px;
+  height: 600px;
+  position: absolute;
+  flex-grow: 1;
+}
+ 
+.frame33414-frame11 {
+  top: 441px;
+  left: 245px;
+  width: 371px;
+  height: 175px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(31, 77, 88, 1);
+}
+ 
+.frame33414-text13 {
+  top: 62px;
+  left: 58px;
+  width: 255px;
+  position: absolute;
+  text-align: left;
+  line-height: 1.6;
+  
+  /* Color and Style */
+  color: #f9f4ef; /* warm antique white */
+  font-family: 'Cinzel', serif; /* elegant serif for historical look */
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  /* Optional decoration */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4); /* for engraved effect */
+  border-left: 4px solid #c9aa71; /* gold accent line for elegance */
+  padding-left: 12px;
+}
+ 
+.frame33414-navbar1 {
+  width: 600px;
+  height: 605px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 248, 234, 1);
+}
+ 
+.frame33414-frame334431 {
+  gap: 24px;
+  width: 404px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-frame334541 {
+  gap: 16px;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+ 
+.frame33414-text14 {
+  color: #1f4d58; /* Deep heritage blue */
+  font-size: 36px;
+  font-family: 'Cinzel', serif; /* or 'Playfair Display' */
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+ 
+.frame33414-text15 {
+  color: #3e3e3e;
+  font-size: 22px;
+  font-family: 'Georgia', serif; /* readable & classic */
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: 20px;
+}
+ 
+.frame33414-button2 {
+  gap: 8px;
+  width: 148px;
+  height: 48px;
+  display: flex;
+  padding: 8px 32px;
+  box-sizing: content-box;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  justify-content: center;
+  
+  /* Background with a golden tone to simulate aristocratic elegance */
+  background-color: #c9aa71; /* Regal gold color */
+  
+  /* Text styling for elegance */
+  color: #fff; /* White text for contrast */
+  font-family: 'Cinzel', serif; /* Classic, historical serif font */
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase; /* Adds a formal touch */
+  
+  /* Subtle box-shadow for a lifted, aristocratic feel */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  
+  /* Border styling for extra opulence */
+  border: 2px solid #1f4d58; /* Castle blue border for contrast */
+  
+  /* Hover effect for interactivity */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.frame33414-button10 {
+  
+  width: auto;
+  min-width: 168px;
+  height: auto;
+  padding: 10px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #bfa980 0%, #a88e5c 100%);
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border: none;
+  
+}
+.frame33414-button2:hover {
+  background-color: #f4d03f; /* Lighter golden tone on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+ 
+.frame33414-label2 {
+  gap: 12px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+}
+ 
+.frame33414-text16 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  text-align: left;
+  line-height: 24px;
+}
+ 
+.frame33414-frame33393 {
+  gap: 32px;
+  display: flex;
+  padding: 72px 120px;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+}
+ 
+
+.frame33414-frame33408 {
+  gap: 24px;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+ 
+.frame33414-card10 {
+  width: 384px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.frame33414-image11 {
+  width: auto;
+  height: 683px;
+  align-self: stretch;
+}
+ 
+.frame33414-text17 {
+  gap: 8px;
+  width: 384px;
+  display: flex;
+  padding: 64px 32px;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.30000001192092896) 0%, rgba(0, 0, 0, 0.30000001192092896) 100%);
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-text18 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 40px;
+}
+ 
+.frame33414-card11 {
+  width: 384px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.frame33414-image12 {
+  width: auto;
+  height: 620px;
+  align-self: stretch;
+}
+ 
+.frame33414-text19 {
+  gap: 8px;
+  width: 384px;
+  display: flex;
+  padding: 64px 32px;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.30000001192092896) 0%, rgba(0, 0, 0, 0.30000001192092896) 100%);
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-text20 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 40px;
+}
+ 
+.frame33414-card12 {
+  width: 384px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.frame33414-image13 {
+  width: auto;
+  height: 620px;
+  align-self: stretch;
+}
+ 
+.frame33414-text21 {
+  gap: 8px;
+  width: 384px;
+  display: flex;
+  padding: 64px 32px;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.30000001192092896) 0%, rgba(0, 0, 0, 0.30000001192092896) 100%);
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-text22 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 40px;
+}
+ 
+.frame33414-frame33409 {
+  gap: 24px;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+ 
+.frame33414-card13 {
+  width: 384px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.frame33414-image14 {
+  width: auto;
+  height: 620px;
+  align-self: stretch;
+}
+ 
+.frame33414-text23 {
+  gap: 8px;
+  width: 384px;
+  display: flex;
+  padding: 64px 32px;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.30000001192092896) 0%, rgba(0, 0, 0, 0.30000001192092896) 100%);
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-text24 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 40px;
+}
+ 
+.frame33414-card14 {
+  width: 384px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.frame33414-image15 {
+  width: auto;
+  height: 620px;
+  align-self: stretch;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+}
+ 
+.frame33414-text25 {
+  gap: 8px;
+  width: 384px;
+  display: flex;
+  padding: 64px 32px;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.30000001192092896) 0%, rgba(0, 0, 0, 0.30000001192092896) 100%);
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-text26 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 40px;
+}
+ 
+.frame33414-card15 {
+  width: 384px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.frame33414-image16 {
+  width: auto;
+  height: 620px;
+  align-self: stretch;
+}
+ 
+.frame33414-text27 {
+  gap: 8px;
+  width: 384px;
+  display: flex;
+  padding: 64px 32px;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.30000001192092896) 0%, rgba(0, 0, 0, 0.30000001192092896) 100%);
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-text28 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 40px;
+}
+ 
+.frame33414-frame33463 {
+  gap: 8px;
+  width: 1328px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-desktop62 {
+  width: 1200px;
+  display: flex;
+  box-sizing: content-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  justify-content: center;
+  background-color: rgba(33, 33, 33, 1);
+}
+ 
+.frame33414-navbar2 {
+  width: 600px;
+  height: 601px;
+  display: flex;
+  padding: 32px 0 32px 72px;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 248, 234, 1);
+}
+ 
+.frame33414-frame334432 {
+  gap: 24px;
+  width: 404px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-frame334542 {
+  gap: 16px;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+ 
+.frame33414-text29 {
+  color: rgba(40, 40, 40, 1);
+  height: auto;
+  font-size: 32px;
+  align-self: stretch;
+  font-style: Book;
+  text-align: left;
+  font-family: Bodoni 72;
+  font-weight: 300;
+  line-height: 48px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+ 
+.frame33414-text30 {
+  color: rgba(33, 33, 33, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 24px;
+}
+ 
+.frame33414-button3 {
+  gap: 8px;
+  width: 148px;
+  height: 48px;
+  display: flex;
+  padding: 8px 32px;
+  box-sizing: content-box;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  justify-content: center;
+  background-color: rgba(180, 150, 100, 1);
+}
+ 
+.frame33414-label3 {
+  gap: 12px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+}
+ 
+.frame33414-text31 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  text-align: left;
+  line-height: 24px;
+}
+ 
+.frame33414-frame334642 {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+ 
+.frame33414-alphsgallery2 {
+  top: 0px;
+  left: 0px;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  flex-grow: 1;
+  box-sizing: content-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+ 
+.frame33414-image17 {
+  top: 0px;
+  left: 0px;
+  width: 601px;
+  height: 600px;
+  position: absolute;
+  flex-grow: 1;
+}
+ 
+.frame33414-frame12 {
+  top: 441px;
+  left: 245px;
+  width: 371px;
+  height: 175px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(31, 77, 88, 1);
+}
+ 
+.frame33414-text32 {
+  top: 49px;
+  left: 58px;
+  color: rgba(255, 255, 255, 1);
+  width: 255px;
+  height: auto;
+  position: absolute;
+  text-align: left;
+  line-height: 26px;
+}
+ 
+.frame33414-frame33459 {
+  gap: 48px;
+  display: flex;
+  padding: 72px 64px;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+}
+ 
+.frame33414-frame33460 {
+  gap: 24px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+ 
+.frame33414-frame33410 {
+  gap: 24px;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+ 
+.frame33414-card16 {
+  width: 384px;
+  height: 384px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.frame33414-image18 {
+  width: auto;
+  height: auto;
+  flex-grow: 1;
+  align-self: stretch;
+}
+ 
+.frame33414-text33 {
+  gap: 8px;
+  width: 384px;
+  display: flex;
+  padding: 32px;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-text34 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 40px;
+}
+ 
+.frame33414-card17 {
+  width: 384px;
+  height: 384px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.frame33414-image19 {
+  width: auto;
+  height: auto;
+  flex-grow: 1;
+  align-self: stretch;
+}
+ 
+.frame33414-text35 {
+  gap: 8px;
+  width: 384px;
+  display: flex;
+  padding: 32px;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-text36 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 40px;
+}
+ 
+.frame33414-card18 {
+  width: 384px;
+  height: 384px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.frame33414-image20 {
+  width: auto;
+  height: auto;
+  flex-grow: 1;
+  align-self: stretch;
+}
+ 
+.frame33414-text37 {
+  gap: 8px;
+  width: 384px;
+  display: flex;
+  padding: 32px;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-text38 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 40px;
+}
+ 
+.frame33414-frame33411 {
+  gap: 24px;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+ 
+.frame33414-card19 {
+  width: 384px;
+  height: 384px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.frame33414-image21 {
+  width: auto;
+  height: auto;
+  flex-grow: 1;
+  align-self: stretch;
+}
+ 
+.frame33414-text39 {
+  gap: 8px;
+  width: 384px;
+  display: flex;
+  padding: 32px;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-text40 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 40px;
+}
+ 
+.frame33414-card20 {
+  width: 384px;
+  height: 384px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.frame33414-image22 {
+  width: auto;
+  height: auto;
+  flex-grow: 1;
+  align-self: stretch;
+}
+ 
+.frame33414-text41 {
+  gap: 8px;
+  width: 384px;
+  display: flex;
+  padding: 32px;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.frame33414-text12::after {
+  content: none !important;
+}
+ 
+.frame33414-text42 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 40px;
+}
+ 
+.frame33414-card21 {
+  width: 384px;
+  height: 384px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.frame33414-image23 {
+  width: auto;
+  height: auto;
+  flex-grow: 1;
+  align-self: stretch;
+}
+ 
+.frame33414-text43 {
+  gap: 8px;
+  width: 384px;
+  display: flex;
+  padding: 32px;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.frame33414-text44 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: left;
+  line-height: 40px;
+}
+ 
+@media(max-width: 1200px) {
+  .frame33414-slide1691 {
+    width: 100%;
+    height: 718px;
+    margin-right: 90px;
+    padding-right: 0px;
+  }
+  .frame33414-frame991 {
+    width: 171px;
+    height: 77px;
+  }
+  .frame33414-our-hotels {
+    top: 317px;
+    left: 192px;
+    width: 1041px;
+    height: 300px;
+  }
+  .frame33414-desktop61 {
+    width: 1077px;
+  }
+  .frame33414-navbar1 {
+    width: 485px;
+  }
+}
