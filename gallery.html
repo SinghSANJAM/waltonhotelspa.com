@@ -1,118 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | Sunday Warwickshire Walton Hall Hotel & Spa</title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the stunning visuals of Sunday Warwickshire Walton Hall Hotel & Spa, showcasing the historic hall, modern facilities, and beautiful grounds." />
+  <meta name="keywords" content="Warwickshire gallery, Walton Hall gallery, hotel photos, event venues, spa facilities" />
+  <link rel="canonical" href="https://www.waltonhotelspa.com/gallery.html" />
+  <title>Gallery | Sunday Walton Hall Hotel & Spa</title>
+  <meta property="og:title" content="Gallery | Sunday Walton Hall Hotel & Spa" />
+  <meta property="og:description" content="Discover the elegance of Walton Hall through our gallery, featuring historic facades, luxurious interiors, and scenic grounds." />
+  <meta property="og:image" content="https://www.waltonhotelspa.com/images/index/output-onlinepngtools.png" />
+  <meta property="og:url" content="https://www.waltonhotelspa.com/gallery.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gallery | Sunday Walton Hall Hotel & Spa" />
+  <meta name="twitter:description" content="View our gallery to see the timeless beauty of Walton Hall and its surroundings." />
+  <meta name="twitter:image" content="https://www.waltonhotelspa.com/images/index/output-onlinepngtools.png" />
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&family=Poppins:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="popup.css" />
   <style>
-    :root {
-      --primary: #9a7d57;
-      --bg: #f8f1e9;
-      --text: #2e4033;
-      --accent: #d4b78f;
-      --shadow: 0 6px 24px rgba(0,0,0,0.12);
-
-    }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Georgia', serif;
-      margin: 0;
-    }
-    .gallery-section .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 2.5rem;
-      font-family: 'Dancing Script', cursive, serif;
-      letter-spacing: 1px;
-    }
-    .gallery-label {
-      font-size: 1.4rem;
-      color: var(--text);
-      margin: 2.5rem 0 1rem 0;
-      font-weight: bold;
-      letter-spacing: 1px;
-      text-align: left;
-      padding-left: 0.2em;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .gallery-grid img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      cursor: pointer;
-      transition: transform 0.25s, box-shadow 0.25s;
-      background: #fff;
-      position: relative;
-    }
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 32px rgba(0,0,0,0.17);
-      z-index: 2;
-    }
-
-    /* Lightbox styles */
-    .lightbox {
+    .whhs_lightbox {
       display: none;
       position: fixed;
-      z-index: 9999;
-      left: 0; top: 0;
-      width: 100vw; height: 100vh;
-      background: rgba(30,30,30,0.95);
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      animation: fadeIn 0.3s;
+      animation: fadeIn 0.3s ease;
     }
-    .lightbox.active {
+    .whhs_lightbox.show {
       display: flex;
     }
-    .lightbox img {
+    .whhs_lightbox img {
       max-width: 90vw;
       max-height: 80vh;
-      border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
       background: #fff;
-      margin-bottom: 2rem;
-      animation: popIn 0.4s;
+      margin-bottom: 20px;
+      animation: popIn 0.4s ease;
     }
-    .lightbox-close {
-      background: var(--primary);
-      color: #fff;
+    .whhs_lightbox-close {
+      background: linear-gradient(90deg, #9a7d57, #b3956d);
+      color: #f9f9f9;
       border: none;
-      font-size: 2rem;
+      font-size: 1.5rem;
       border-radius: 50%;
-      width: 48px; height: 48px;
+      width: 40px;
+      height: 40px;
       position: absolute;
-      top: 40px; right: 50px;
+      top: 40px;
+      right: 40px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: var(--shadow);
-      transition: background 0.2s, transform 0.2s;
-      z-index: 10001;
+      transition: all 0.3s ease;
     }
-    .lightbox-close:hover {
-      background: var(--accent);
-      color: var(--primary);
+    .whhs_lightbox-close:hover,
+    .whhs_lightbox-close:focus {
+      background: linear-gradient(90deg, #d4b78f, #d8c2a3);
+      color: #2e4033;
       transform: scale(1.1) rotate(180deg);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      outline: none;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -123,39 +83,37 @@
       to { transform: scale(1); opacity: 1; }
     }
     @media (max-width: 768px) {
-      .section-title { font-size: 2rem; }
-      .gallery-label { font-size: 1.1rem; }
-      .lightbox-close { top: 16px; right: 16px; }
+      .whhs_lightbox-close {
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.25rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- HEADER: DO NOT EDIT -->
-  <header class="site-header">
+
+  <header class="site-header" role="banner">
     <div class="header-container">
       <div class="logo">
         <a href="index.html">
           <img src="images/index/output-onlinepngtools.png" alt="Walton Hall Hotel & Spa Logo" />
         </a>
       </div>
-
-      <!-- Navigation -->
-      <nav class="main-navigation">
+      <nav class="main-navigation" aria-label="Main navigation">
         <ul class="nav-menu">
-          <!-- About Dropdown -->
           <li class="dropdown">
-            <a href="#">About</a>
+            <a href="#" aria-haspopup="true" aria-expanded="false">About</a>
             <ul class="dropdown-menu">
               <li><a href="about.html">About Us</a></li>
               <li><a href="contact.html">Contact Us</a></li>
             </ul>
           </li>
-
           <li><a href="rooms.html">Rooms</a></li>
-
-          <!-- Meetings & Events Dropdown -->
           <li class="dropdown">
-            <a href="#">Meetings & Events</a>
+            <a href="#" aria-haspopup="true" aria-expanded="false">Meetings & Events</a>
             <ul class="dropdown-menu">
               <li><a href="meetings.html">Meetings</a></li>
               <li><a href="events.html">Special Events</a></li>
@@ -165,122 +123,257 @@
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="weddings.html">Weddings</a></li>
           <li><a href="christmas.html">Christmas</a></li>
-          <li><a href="https://www.vagaro.com/uk01/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVKOUWVD15XSjc0gHFQa+P52nY+71mFX0UTTLeFv6B/FsabAs5cyoxouVJ60ZqQreei4m10nSaBpIXspPkhGQ/bJvzB1+SM376okjrvm1iXOQN4Sh5OqN1JT/Gv7gHLI7EyEwXD7h9VIl7VaIdESKqY/cjk/3zwEUNX9esZhExOmTykWoApKMIcc1GOlrdZeoBVW4xe209AERY8uH28fOwBk+o+abcPS584y+nIS8nWDEzUlLns3xnzgcUNfwFUSX3LqQzqg9tVzlt1cwVnSpNaHQIZabCnsP+ZiT2ofUrKGARubyMynKnepGE8e38Ncrv3Vm7s27EDJ4QIJ6JXMJ0cVqlrWu9+BKpLFYFuBTn5nwrEbdgtsFCRNOidcFiFtRHtv1UMQ/Zg6aQzTx74FCkaAKSGtmdiW72TS6hUPx9bN7QG5P7fBR1hZf5h2Oi7kEIw==" target="_blank" rel="noopener noreferrer">Spa</a></li>
+          <li><a href="spa.html">Spa</a></li>
         </ul>
       </nav>
-
-      <!-- Booking Button -->
       <div class="booking-button">
         <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
       </div>
-
-      <!-- Mobile Menu (optional toggle logic can be added) -->
-      <div class="mobile-menu-toggle">
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
     </div>
   </header>
-  <section style="height: 100px;"></section>
 
-  <!-- GALLERY SECTION -->
-  <section class="gallery-section">
-    <div class="container">
-      <h2 class="section-title">Gallery</h2>
+  <main id="main-content" class="whhs_container">
+    <div class="whhs_carousel">
+      <div class="whhs_carousel-container">
+        <div class="whhs_carousel-slide">
+          <img src="images/gallery/1.jpg" alt="Facade 1" class="whhs_room-image" />
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Historic Facade</h2>
+            <p class="whhs_carousel-subtitle">The majestic exterior of Walton Hall, steeped in 16th-century charm.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/gallery/9.jpg" alt="Lobby 1" class="whhs_room-image" />
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Elegant Lobby</h2>
+            <p class="whhs_carousel-subtitle">Step into luxury with our beautifully designed lobby spaces.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/gallery/8.jpg" alt="Reception 1" class="whhs_room-image" />
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Warm Reception</h2>
+            <p class="whhs_carousel-subtitle">A welcoming reception area for all guests.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/accomodation/walton-hall-hotel-spa-by-sunday-two-bedroom-apartment-171_17470084723.jpg" alt="Room 1" class="whhs_room-image" />
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Luxurious Rooms</h2>
+            <p class="whhs_carousel-subtitle">Experience comfort in our elegantly appointed rooms.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/banquet/Moncrieffe Banqueting 11.jpg" alt="Banquet 1" class="whhs_room-image" />
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Grand Banquets</h2>
+            <p class="whhs_carousel-subtitle">Host unforgettable events in our stunning banquet venues.</p>
+          </div>
+        </div>
+      </div>
+      <button class="whhs_prev" aria-label="Previous slide">❮</button>
+      <button class="whhs_next" aria-label="Next slide">❯</button>
+      <div class="whhs_carousel-indicators" role="tablist"></div>
+    </div>
 
-      <div class="gallery-label">Facade</div>
-      <div class="gallery-grid" data-aos="fade-up">
-        <img src="images/gallery/1.jpg" alt="Facade 1">
-        <img src="images/gallery/2.jpg" alt="Facade 2">
-        <img src="images/gallery/3.jpg" alt="Facade 3">
-        <img src="images/gallery/4.jpg" alt="Facade 4">
-        <img src="images/gallery/5.jpg" alt="Facade 5">
-        <img src="images/gallery/6.png" alt="Facade 6">
+    <section class="whhs_intro">
+      <div class="section-content">
+        <h1>Gallery @ Sunday Walton Hall Hotel & Spa</h1>
+        <p>Explore the timeless elegance of Sunday Warwickshire Walton Hall Hotel & Spa, set amidst 65 acres of stunning countryside. Our gallery showcases the historic charm of the 16th-century hall, luxurious interiors, modern facilities, and beautifully landscaped grounds, offering a glimpse into the perfect setting for your stay or event.</p>
+        <p>From grand facades to elegant rooms and versatile event spaces, discover why Walton Hall is the ideal venue for any occasion.</p>
+        <a href="contact.html" class="whhs_btn-package">Inquire About Your Visit</a>
       </div>
-      <div class="gallery-label">Lobby</div>
-      <div class="gallery-grid" data-aos="fade-up">
-        <img src="images/gallery/7.jpg" alt="Lobby 1">
-        <img src="images/gallery/8.jpg" alt="Lobby 2">
-        <img src="images/gallery/9.jpg" alt="Lobby 3">
-        <img src="images/gallery/10.jpg" alt="Lobby 4">
-        <img src="images/gallery/11.jpg" alt="Lobby 5">
-        <img src="images/gallery/12.jpg" alt="Lobby 6">
+    </section>
+
+    <section class="magic-welcome-section">
+      <div class="magic-welcome-container">
+        <div class="magic-content">
+          <h2 class="magic-title">Aerial Elegance</h2>
+          <div class="magic-underline"></div>
+          <p class="magic-subtitle">
+            Soar above the tranquil beauty of Sunday Warwickshire Walton Hall Hotel & Spa — a breathtaking perspective that captures timeless charm from the skies.
+          </p>
+        </div>
+        <div class="drone-reel-container">
+          <div class="drone-reel-embed" id="videoWrapper">
+            <iframe id="youtubeVideo" width="700" height="394"
+              src="https://www.youtube.com/embed/EkEgYyDfqHc?enablejsapi=1&rel=0&modestbranding=1"
+              title="Drone Reel"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+            <button id="customPlayBtn" class="drone-reel-play-btn" aria-label="Play drone reel video">►</button>
+          </div>
+        </div>
       </div>
-      <div class="gallery-label">Reception</div>
-      <div class="gallery-grid" data-aos="fade-up">
-        <img src="images/gallery/13.jpg" alt="Reception 1">
-        <img src="images/gallery/14.jpg" alt="Reception 2">
-        <img src="images/gallery/15.jpg" alt="Reception 3">
-        <img src="images/gallery/16.jpg" alt="Reception 4">
-        <img src="images/gallery/17.jpg" alt="Reception 5">
-        <img src="images/gallery/18.jpg" alt="Reception 6">
-        <img src="images/gallery/19.png" alt="Reception 7">
+    </section>
+
+    <section class="whhs_room-section">
+      <div class="section-content">
+        <h2>Explore Our Gallery</h2>
+        <div class="whhs_filter-buttons">
+          <button class="whhs_filter-btn whhs_active" data-filter="all" tabindex="0" aria-pressed="true">All</button>
+          <button class="whhs_filter-btn" data-filter="facade" tabindex="0" aria-pressed="false">Facade</button>
+          <button class="whhs_filter-btn" data-filter="lobby" tabindex="0" aria-pressed="false">Lobby</button>
+          <button class="whhs_filter-btn" data-filter="reception" tabindex="0" aria-pressed="false">Reception</button>
+          <button class="whhs_filter-btn" data-filter="room" tabindex="0" aria-pressed="false">Rooms</button>
+          <button class="whhs_filter-btn" data-filter="bathroom" tabindex="0" aria-pressed="false">Bathrooms</button>
+          <button class="whhs_filter-btn" data-filter="meeting" tabindex="0" aria-pressed="false">Meeting Rooms</button>
+          <button class="whhs_filter-btn" data-filter="banquet" tabindex="0" aria-pressed="false">Banquets</button>
+        </div>
+        <div class="whhs_meeting-rooms-grid">
+          <div class="whhs_meeting-room" data-category="facade" tabindex="0">
+            <img src="images/gallery/1.jpg" alt="Facade 1" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Historic Facade</h3>
+              <p>The grand exterior of Walton Hall, showcasing its 16th-century architecture.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="facade" tabindex="0">
+            <img src="images/gallery/2.jpg" alt="Facade 2" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Facade View</h3>
+              <p>A stunning angle of the Victorian garden.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="lobby" tabindex="0">
+            <img src="images/gallery/17.jpg" alt="Lobby 1" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Elegant Lobby</h3>
+              <p>A luxurious lobby welcoming guests with timeless charm.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="lobby" tabindex="0">
+            <img src="images/gallery/8.jpg" alt="Lobby 2" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Lobby Interior</h3>
+              <p>Experience the warm ambiance of our lobby spaces.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="reception" tabindex="0">
+            <img src="images/gallery/13.jpg" alt="Reception 1" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Reception Area</h3>
+              <p>A modern and welcoming reception for all guests.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="reception" tabindex="0">
+            <img src="images/gallery/14.jpg" alt="Reception 2" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Reception Desk</h3>
+              <p>Our friendly reception team is ready to assist.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="room" tabindex="0">
+            <img src="images/accomodation/suite 1.jpg" alt="Room 1" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Luxury Suite</h3>
+              <p>A spacious and elegantly appointed suite for your comfort.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="room" tabindex="0">
+            <img src="images/accomodation/Hall Superior Bedroom 3 (2).jpg" alt="Room 2" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Superior Bedroom</h3>
+              <p>A cozy and luxurious bedroom in the historic hall.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="bathroom" tabindex="0">
+            <img src="images/accomodation/Hotel Privilege Accessible Wetroom.jpg" alt="Accessible En-suite 1" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Accessible En-suite</h3>
+              <p>A modern and accessible en-suite for guest convenience.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="bathroom" tabindex="0">
+            <img src="images/accomodation/Hall Superior Bedroom Bath (2).jpg" alt="Luxury En-suite 1" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Luxury En-suite</h3>
+              <p>A beautifully designed en-suite for relaxation.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="meeting" tabindex="0">
+            <img src="images/gallery/20.jpg" alt="Meeting Room 1" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Meeting Room</h3>
+              <p>A versatile space for corporate events and meetings.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="meeting" tabindex="0">
+            <img src="images/gallery/21.jpg" alt="Meeting Room 2" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Conference Space</h3>
+              <p>A modern meeting room equipped for productivity.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="banquet" tabindex="0">
+            <img src="images/banquet/Moncrieffe Banqueting 11.jpg" alt="Banquet 1" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Moncrieffe Banquet</h3>
+              <p>A grand venue for unforgettable banquets and events.</p>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="banquet" tabindex="0">
+            <img src="images/banquet/Mordaunt Banquet.jpg" alt="Banquet 2" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Mordaunt Banquet</h3>
+              <p>An elegant setting for large-scale celebrations.</p>
+            </div>
+          </div>
+        </div>
+        <div class="whhs_lightbox" id="lightbox">
+          <button class="whhs_lightbox-close" id="lightboxClose" aria-label="Close Lightbox"><i class="fas fa-times"></i></button>
+          <img src="" alt="Gallery Image" id="lightboxImg">
+        </div>
       </div>
-      <div class="gallery-label">Room</div>
-      <div class="gallery-grid" data-aos="fade-up">
-        <img src="images/accomodation/suite 1.jpg" alt="Room 1">
-        <img src="images/accomodation/Hall Superior Bedroom 3 (2).jpg" alt="Room 2">
-        <img src="images/accomodation/Apartment.jpg" alt="Room 3">
+    </section>
+
+    <section class="whhs_contact">
+      <div class="section-content">
+        <h2>Contact Us Now</h2>
+        <p>Inspired by our gallery? Contact our team to plan your visit or event at Walton Hall.</p>
+        <p><strong>Telephone:</strong> <a href="tel:+441789842424">01789 842424</a></p>
+        <p><strong>Email:</strong> <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a></p>
+        <a href="contact.html" class="whhs_btn-contact">Contact Us</a>
       </div>
-      <div class="gallery-label">Washroom</div>
-      <div class="gallery-grid" data-aos="fade-up">
-        <img src="images/accomodation/Hotel Privilege Accessible Wetroom.jpg" alt="Washroom 1">
-        <img src="images/accomodation/suite 2.jpg" alt="Washroom 2">
-        <img src="images/accomodation/Hall Superior Bedroom Bath (2).jpg" alt="Washroom 3">
-      </div>
-      <div class="gallery-label">Meeting rooms</div>
-      <div class="gallery-grid" data-aos="fade-up">
-        <img src="images/gallery/20.jpg" alt="Meeting room 1">
-        <img src="images/gallery/21.jpg" alt="Meeting Room 2">
-        <img src="images/gallery/22.jpg" alt="Meeting Room 3">
-        <img src="images/gallery/23.jpg" alt="Meeting Room 4">
-      </div>
-      <div class="gallery-label">Banquets</div>
-      <div class="gallery-grid" data-aos="fade-up">
-        <img src="images/banquet/Moncrieffe Banqueting 11.jpg" alt="Banquet 1">
-        <img src="images/banquet/Mordaunt Banquet.jpg" alt="Banquet 2">
-        <img src="images/banquet/Courtyard Banquet (1).png" alt="Banquet 3">
-      </div>
-    </div>
-    <!-- Lightbox Popup -->
-    <div class="lightbox" id="lightbox">
-      <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fa fa-times"></i></button>
-      <img src="" alt="Gallery Image" id="lightboxImg">
-    </div>
-  </section>
-  <!-- FOOTER: DO NOT EDIT -->
-  <footer class="site-footer" id="contact">
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-columns">
         <div class="footer-column">
-          <li>
-            <a href="contact.html" class="footer-button">Contact Us</a>
-          </li>
+          <h4>Contact Us</h4>
           <address>
-            Sunday Warwickshire Walton Hall Hotel & Spa<br>
-            Walton, Wellesbourne, CV35 9HG<br>
-            <a href="tel:+441789842424">+44 01789 842424</a><br>
+            Sunday Warwickshire Walton Hall Hotel & Spa<br />
+            Walton, Wellesbourne, CV35 9HG<br />
+            <a href="tel:+441789842424">+44 01789 842424</a><br />
             <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a>
           </address>
+          <a href="contact.html" class="footer-button">Get in Touch</a>
         </div>
-        
         <div class="footer-column">
           <h4>Getting Here</h4>
-          <p>From the M40 (South), exit at junction 15. Take the fourth exit onto the A429 to Cirencester. Continue through Barford and turn left at the roundabout for Wellesbourne.</p>
+          <p><strong>By Road:</strong>  
+              <p>From M40 North (J13), follow signs to Wellesbourne, then right after the Watermill.  </p>
+              <p>From M40 South (J15), take A429 to Wellesbourne, then right after the Watermill.  
+          Follow the single lane for 1.5 miles.</p>
         </div>
-        
         <div class="newsletter">
           <h4>Newsletter</h4>
-          <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="newsletter-form">
-            <input type="email" name="email" placeholder="Your email address" required>
-            <button class="btn" type="submit">Subscribe</button>
-            <!-- Settings -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="New Newsletter Signup!">
-            <input type="hidden" name="_next" value="https://yourdomain.com/newsletter.html?subscribed=true">
+          <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="newsletter-form" onsubmit="return validateForm(this)">
+            <input type="email" name="email" placeholder="Your email address" required aria-label="Email Address" />
+            <button type="submit">Subscribe</button>
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="New Newsletter Signup!" />
+            <input type="hidden" name="_next" value="https://www.waltonhotelspa.com/newsletter.html?subscribed=true" />
           </form>
-          <div id="newsletter-popup" class="popup-message">Thank you for subscribing! 🎉</div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -293,47 +386,316 @@
       </div>
     </div>
   </footer>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: true });
 
-    // Lightbox functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const images = document.querySelectorAll('.gallery-grid img');
+  <script>
+    // Form Validation
+    function validateForm(form) {
+      const email = form.querySelector('input[type="email"]');
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        alert('Please enter a valid email address.');
+        email.focus();
+        return false;
+      }
+      return true;
+    }
+
+    // YouTube Player Variables
+    let player;
+    const playBtn = document.getElementById('customPlayBtn');
+
+    // Load YouTube IFrame API
+    function loadYouTubeAPI() {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+
+    // YouTube IFrame API Ready Callback
+    window.onYouTubeIframeAPIReady = function () {
+      player = new YT.Player('youtubeVideo', {
+        events: {
+          'onStateChange': onPlayerStateChange,
+          'onError': (event) => {
+            console.error('YouTube Player Error:', event.data);
+            playBtn.style.display = 'block';
+          }
+        }
+      });
+    };
+
+    // Player State Change Handler
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.ENDED) {
+        playBtn.style.display = 'block';
+      }
+    }
+
+    // Carousel Preload Images
+    function preloadImages(imageUrls, callback) {
+      let loadedImages = 0;
+      const totalImages = imageUrls.length;
+      imageUrls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => {
+          loadedImages++;
+          if (loadedImages === totalImages) {
+            callback();
+          }
+        };
+        img.onerror = () => {
+          console.error('Failed to preload image:', url);
+          loadedImages++;
+          if (loadedImages === totalImages) {
+            callback();
+          }
+        };
+      });
+    }
+
+    // Debounce function to limit rapid clicks
+    function debounce(func, wait) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    }
+
+    // Event Listeners
+    window.addEventListener('DOMContentLoaded', () => {
+      // Initialize YouTube API
+      loadYouTubeAPI();
+
+      // Custom Play Button
+      if (playBtn) {
+        playBtn.addEventListener('click', () => {
+          if (player && typeof player.playVideo === 'function') {
+            playBtn.style.display = 'none';
+            player.playVideo();
+          } else {
+            console.warn('YouTube player not ready yet.');
+          }
+        });
+      }
+
+      // Mobile Menu Toggle
+      const mobileToggle = document.querySelector('.mobile-menu-toggle');
+      const nav = document.querySelector('.main-navigation');
+      mobileToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
+        const isActive = mobileToggle.classList.contains('active');
+        mobileToggle.setAttribute('aria-expanded', isActive);
+        const spans = mobileToggle.querySelectorAll('span');
+        spans[0].style.transform = isActive ? 'rotate(45deg) translate(5px, 5px)' : 'none';
+        spans[1].style.opacity = isActive ? '0' : '1';
+        spans[2].style.transform = isActive ? 'rotate(-45deg) translate(7px, -7px)' : 'none';
+      });
+
+      // Newsletter Popup
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('subscribed') === 'true') {
+        const popup = document.getElementById('newsletter-popup');
+        if (popup) {
+          popup.style.display = 'block';
+          setTimeout(() => popup.style.display = 'none', 5000);
+        }
+      }
+
+      // Carousel
+      const carouselContainer = document.querySelector('.whhs_carousel-container');
+      const carouselSlides = document.querySelectorAll('.whhs_carousel-slide');
+      const indicatorsContainer = document.querySelector('.whhs_carousel-indicators');
+      const prevButton = document.querySelector('.whhs_prev');
+      const nextButton = document.querySelector('.whhs_next');
+      let currentIndex = 0;
+      const totalSlides = carouselSlides.length;
+      let autoSlideInterval = null;
+      let isCarouselReady = false;
+
+      // Collect image URLs for preloading
+      const imageUrls = Array.from(carouselSlides).map(slide => slide.querySelector('img').src);
+
+      // Initialize carousel after images are preloaded
+      preloadImages(imageUrls, () => {
+        isCarouselReady = true;
+        updateCarousel();
+        startAutoSlide();
+      });
+
+      // Initialize indicators
+      for (let i = 0; i < totalSlides; i++) {
+        const indicator = document.createElement('button');
+        indicator.classList.add('whhs_indicator');
+        indicator.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        indicator.setAttribute('role', 'tab');
+        indicator.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        if (i === 0) indicator.classList.add('whhs_active');
+        indicator.addEventListener('click', debounce(() => {
+          if (isCarouselReady) {
+            currentIndex = i;
+            updateCarousel();
+            pauseAutoSlide();
+          }
+        }, 300));
+        indicator.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            if (isCarouselReady) {
+              currentIndex = i;
+              updateCarousel();
+              pauseAutoSlide();
+            }
+          }
+        });
+        indicatorsContainer.appendChild(indicator);
+      }
+
+      function updateCarousel() {
+        if (!isCarouselReady) return;
+        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        document.querySelectorAll('.whhs_indicator').forEach((indicator, i) => {
+          indicator.classList.toggle('whhs_active', i === currentIndex);
+          indicator.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
+        });
+      }
+
+      function startAutoSlide() {
+        if (autoSlideInterval) clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
+          if (isCarouselReady) {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+          }
+        }, 8000);
+      }
+
+      function pauseAutoSlide() {
+        if (autoSlideInterval) clearInterval(autoSlideInterval);
+        setTimeout(startAutoSlide, 10000);
+      }
+
+      const debouncedPrev = debounce(() => {
+        if (isCarouselReady) {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          updateCarousel();
+          pauseAutoSlide();
+        }
+      }, 300);
+
+      const debouncedNext = debounce(() => {
+        if (isCarouselReady) {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          updateCarousel();
+          pauseAutoSlide();
+        }
+      }, 300);
+
+      prevButton.addEventListener('click', debouncedPrev);
+      nextButton.addEventListener('click', debouncedNext);
+
+      prevButton.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          debouncedPrev();
+        }
+      });
+
+      nextButton.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          debouncedNext();
+        }
+      });
+
+      carouselContainer.addEventListener('mouseenter', pauseAutoSlide);
+      carouselContainer.addEventListener('mouseleave', startAutoSlide);
+      prevButton.addEventListener('focus', pauseAutoSlide);
+      nextButton.addEventListener('focus', pauseAutoSlide);
+      indicatorsContainer.addEventListener('focusin', pauseAutoSlide);
+      indicatorsContainer.addEventListener('focusout', startAutoSlide);
+
+      // Image Error Handling
+      document.querySelectorAll('img').forEach(img => {
+        img.onerror = () => {
+          console.error('Failed to load image:', img.src);
+          img.src = 'images/rooms/fallback.jpg';
+        };
+      });
+
+      // Lightbox Functionality
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightboxImg');
       const closeBtn = document.getElementById('lightboxClose');
+      const galleryImages = document.querySelectorAll('.whhs_meeting-room img');
 
-      images.forEach(img => {
-        img.addEventListener('click', function() {
-          lightboxImg.src = this.src;
-          lightboxImg.alt = this.alt;
-          lightbox.classList.add('active');
+      galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightbox.classList.add('show');
+          closeBtn.focus();
+        });
+        img.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('show');
+            closeBtn.focus();
+          }
         });
       });
 
-      closeBtn.addEventListener('click', function() {
-        lightbox.classList.remove('active');
+      closeBtn.addEventListener('click', () => {
+        lightbox.classList.remove('show');
         lightboxImg.src = '';
         lightboxImg.alt = '';
       });
 
-      // Close on backdrop click
-      lightbox.addEventListener('click', function(e) {
+      lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) {
-          lightbox.classList.remove('active');
+          lightbox.classList.remove('show');
           lightboxImg.src = '';
           lightboxImg.alt = '';
         }
       });
 
-      // Close on ESC key
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          lightbox.classList.remove('active');
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+          lightbox.classList.remove('show');
           lightboxImg.src = '';
           lightboxImg.alt = '';
         }
+      });
+
+      // Filter
+      const filterButtons = document.querySelectorAll('.whhs_filter-btn');
+      const meetingRooms = document.querySelectorAll('.whhs_meeting-room');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => {
+            btn.classList.remove('whhs_active');
+            btn.setAttribute('aria-pressed', 'false');
+          });
+          button.classList.add('whhs_active');
+          button.setAttribute('aria-pressed', 'true');
+          const filter = button.getAttribute('data-filter');
+          meetingRooms.forEach(room => {
+            const categories = room.getAttribute('data-category').split(' ');
+            room.style.display = filter === 'all' || categories.includes(filter) ? 'block' : 'none';
+          });
+        });
+
+        button.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            button.click();
+          }
+        });
       });
     });
   </script>
