@@ -1,643 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Host your special events at Sunday Warwickshire Walton Hall Hotel & Spa, offering timeless venues for 10 to 200 guests, from Christenings to elegant dinner parties." />
+  <meta name="keywords" content="Warwickshire event venues, Walton Hall special events, private dinners, Christenings, Proms, celebrations" />
+  <link rel="canonical" href="https://www.waltonhotelspa.com/events.html" />
   <title>Special Events | Sunday Walton Hall Hotel & Spa</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-
-  <style>
-    :root {
-      --event-primary: #9a7d57;
-      --event-secondary: #000000;
-      --event-light: #f9f9f9;
-      --event-dark: #000000;
-      --event-accent: #d4b78f;
-      --event-text: #000000;
-      --event-border: #e0e0e0;
-      --event-transition: all 0.3s ease;
-      --premium-dark: #2e4033;
-      --shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    body {
-      background: linear-gradient(to bottom, rgba(46,64,51,0.05), rgba(212,183,143,0.05));
-    }
-
-    .whhs_container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .whhs_hero {
-      position: relative;
-      width: 100vw;
-      height: 70vh;
-      margin: 0 0 3rem 0;
-      overflow: hidden;
-      left: calc(-50vw + 50%);
-      background: linear-gradient(to bottom, rgba(46,64,51,0.1), transparent);
-    }
-
-    .whhs_hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.8s ease;
-    }
-
-    .whhs_hero:hover img {
-      transform: scale(1.06);
-    }
-
-    .whhs_hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(46,64,51,0.65), rgba(0,0,0,0.45));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      color: var(--event-light);
-      padding: 2.5rem;
-    }
-
-    .whhs_hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      margin-bottom: 1.25rem;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-      letter-spacing: 2px;
-      color: var(--event-accent);
-    }
-
-    .whhs_hero-subtitle {
-      font-family: 'Roboto', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 300;
-      max-width: 650px;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-      color: var(--event-light);
-    }
-
-    .whhs_intro, .whhs_venues, .whhs_catering, .whhs_contact {
-      margin: 4rem 0;
-      padding: 3rem;
-      background: linear-gradient(135deg, var(--event-light), rgba(212,183,143,0.1));
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      transition: transform var(--event-transition), box-shadow var(--event-transition);
-      position: relative;
-      overflow: hidden;
-      border: 2px solid var(--event-primary);
-    }
-
-    .whhs_intro::before, .whhs_venues::before, .whhs_catering::before, .whhs_contact::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        rgba(46,64,51,0.05) 10px,
-        rgba(46,64,51,0.05) 20px
-      );
-      opacity: 0.1;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .whhs_intro::after, .whhs_venues::after, .whhs_catering::after, .whhs_contact::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      background: radial-gradient(circle at top left, rgba(212,183,143,0.2), transparent 70%);
-      opacity: 0.3;
-      z-index: -1;
-    }
-
-    .whhs_intro:hover, .whhs_venues:hover, .whhs_catering:hover, .whhs_contact:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-      border-color: var(--event-accent);
-    }
-
-    .whhs_intro h1, .whhs_venues h2, .whhs_catering h2, .whhs_contact h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      color: #9a7d57;
-      margin-bottom: 1.25rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .whhs_intro h1::after, .whhs_venues h2::after, .whhs_catering h2::after, .whhs_contact h2::after {
-      content: '';
-      display: block;
-      width: 100px;
-      height: 3px;
-      background: linear-gradient(to right, var(--event-accent), var(--event-primary));
-      margin: 0.5rem 0 1.25rem;
-      border-radius: 2px;
-    }
-
-    .whhs_venue-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 1rem;
-    }
-
-    .whhs_venue-card {
-      background: var(--event-light);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: transform var(--event-transition), box-shadow var(--event-transition);
-      position: relative;
-      border: 2px solid var(--event-primary);
-      background-clip: padding-box;
-    }
-
-    .whhs_venue-card::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(135deg, rgba(212,183,143,0.3), rgba(154,125,87,0.3));
-      opacity: 0.2;
-      z-index: -1;
-    }
-
-    .whhs_venue-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-      border-color: var(--event-accent);
-    }
-
-    .whhs_venue-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform var(--event-transition);
-    }
-
-    .whhs_venue-card:hover .whhs_venue-image {
-      transform: scale(1.1);
-    }
-
-    .whhs_venue-info {
-      padding: 1.5rem;
-      background: linear-gradient(to bottom, var(--event-light), rgba(212,183,143,0.05));
-      position: relative;
-      z-index: 1;
-    }
-
-    .whhs_venue-info h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: var(--premium-dark);
-      margin-bottom: 0.75rem;
-    }
-
-    .whhs_venue-info p {
-      font-size: 1rem;
-      color: var(--event-text);
-      line-height: 1.6;
-    }
-
-    .whhs_btn {
-      display: inline-block;
-      background: var(--premium-dark);
-      color: var(--event-light);
-      padding: 1rem 2.5rem;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: 600;
-      margin: 1.5rem 0;
-      transition: var(--event-transition);
-      border: 2px solid var(--event-primary);
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      text-decoration: none;
-    }
-
-    .whhs_btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        135deg,
-        transparent,
-        transparent 5px,
-        rgba(212,183,143,0.1) 5px,
-        rgba(212,183,143,0.1) 10px
-      );
-      opacity: 0.1;
-      pointer-events: none;
-    }
-
-    .whhs_btn:hover {
-      background: var(--event-accent);
-      border-color: var(--premium-dark);
-      color: var(--premium-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-    }
-
-    .whhs_contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .whhs_facility-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      font-size: 1.05rem;
-    }
-
-    .whhs_facility-item i {
-      color: var(--premium-dark);
-      font-size: 1.75rem;
-    }
-
-    .whhs_modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(46,64,51,0.85);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .whhs_modal-content {
-      background: linear-gradient(to bottom, var(--event-light), rgba(212,183,143,0.1));
-      width: 90%;
-      max-width: 700px;
-      padding: 3rem;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      animation: fadeIn 0.5s ease;
-      position: relative;
-      border: 2px solid var(--event-accent);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .whhs_modal-content input, .whhs_modal-content textarea {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border: 2px solid var(--event-primary);
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: border-color var(--event-transition), box-shadow var(--event-transition);
-      background: rgba(255,255,255,0.9);
-    }
-
-    .whhs_modal-content input:focus, .whhs_modal-content textarea:focus {
-      border-color: var(--event-accent);
-      box-shadow: 0 0 8px rgba(212,183,143,0.3);
-      outline: none;
-    }
-
-    .whhs_modal-content button {
-      background: var(--event-accent);
-      color: var(--premium-dark);
-      padding: 1rem 2.5rem;
-      border: 2px solid var(--event-primary);
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 600;
-      transition: var(--event-transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .whhs_modal-content button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 5px,
-        rgba(46,64,51,0.1) 5px,
-        rgba(46,64,51,0.1) 10px
-      );
-      opacity: 0.1;
-      pointer-events: none;
-    }
-
-    .whhs_modal-content button:hover {
-      background: var(--premium-dark);
-      border-color: var(--event-accent);
-      color: var(--event-light);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    @media (max-width: 768px) {
-      .whhs_hero-title {
-        font-size: 2rem;
-      }
-
-      .whhs_hero-subtitle {
-        font-size: 1.1rem;
-      }
-
-      .whhs_intro, .whhs_venues, .whhs_catering, .whhs_contact {
-        padding: 1.5rem;
-        margin: 2rem 0;
-      }
-
-      .whhs_venue-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .whhs_hero {
-        height: 50vh;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .whhs_hero-title {
-        font-size: 1.5rem;
-      }
-
-      .whhs_hero-subtitle {
-        font-size: 0.95rem;
-      }
-    }
-  </style>
+  <meta property="og:title" content="Special Events | Sunday Walton Hall Hotel & Spa" />
+  <meta property="og:description" content="Celebrate your special moments with tailored events at Walton Hall Hotel & Spa, set in 65 acres of Warwickshire countryside." />
+  <meta property="og:image" content="https://www.waltonhotelspa.com/images/index/output-onlinepngtools.png" />
+  <meta property="og:url" content="https://www.waltonhotelspa.com/events.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Special Events | Sunday Walton Hall Hotel & Spa" />
+  <meta name="twitter:description" content="Plan your private event at Walton Hall Hotel & Spa, featuring versatile venues and bespoke catering." />
+  <meta name="twitter:image" content="https://www.waltonhotelspa.com/images/index/output-onlinepngtools.png" />
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&family=Poppins:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-container">
-          <div class="logo">
-            <a href="index.html">
-              <img src="images/index/output-onlinepngtools.png" alt="Walton Hall Hotel & Spa Logo" />
-            </a>
-          </div>
-    
-          <!-- Navigation -->
-          <nav class="main-navigation">
-            <ul class="nav-menu">
-              <!-- About Dropdown -->
-              <li class="dropdown">
-                <a href="#">About</a>
-                <ul class="dropdown-menu">
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-              </li>
-    
-              <li><a href="rooms.html">Rooms</a></li>
-    
-              <!-- Meetings & Events Dropdown -->
-              <li class="dropdown">
-                <a href="#">Meetings & Events</a>
-                <ul class="dropdown-menu">
-                  <li><a href="meetings.html">Meetings</a></li>
-                  <li><a href="events.html">Special Events</a></li>
-                  <li><a href="exclusivehire.html">Exclusive Hire</a></li>
-                </ul>
-              </li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="weddings.html">Weddings</a></li>
-              <li><a href="christmas.html">Christmas</a></li>
-              <li><a href="https://www.vagaro.com/uk01/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVKOUWVD15XSjc0gHFQa+P52nY+71mFX0UTTLeFv6B/FsabAs5cyoxouVJ60ZqQreei4m10nSaBpIXspPkhGQ/bJvzB1+SM376okjrvm1iXOQN4Sh5OqN1JT/Gv7gHLI7EyEwXD7h9VIl7VaIdESKqY/cjk/3zwEUNX9esZhExOmTykWoApKMIcc1GOlrdZeoBVW4xe209AERY8uH28fOwBk+o+abcPS584y+nIS8nWDEzUlLns3xnzgcUNfwFUSX3LqQzqg9tVzlt1cwVnSpNaHQIZabCnsP+ZiT2ofUrKGARubyMynKnepGE8e38Ncrv3Vm7s27EDJ4QIJ6JXMJ0cVqlrWu9+BKpLFYFuBTn5nwrEbdgtsFCRNOidcFiFtRHtv1UMQ/Zg6aQzTx74FCkaAKSGtmdiW72TS6hUPx9bN7QG5P7fBR1hZf5h2Oi7kEIw==" target="_blank" rel="noopener noreferrer">Spa</a></li>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/index/output-onlinepngtools.png" alt="Walton Hall Hotel & Spa Logo" />
+        </a>
+      </div>
+      <nav class="main-navigation" aria-label="Main navigation">
+        <ul class="nav-menu">
+          <li class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">About</a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
             </ul>
-          </nav>
-    
-          <!-- Booking Button -->
-          <div class="booking-button">
-            <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
-          </div>
-    
-          <!-- Mobile Menu (optional toggle logic can be added) -->
-          <div class="mobile-menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+          </li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">Meetings & Events</a>
+            <ul class="dropdown-menu">
+              <li><a href="meetings.html">Meetings</a></li>
+              <li><a href="events.html">Special Events</a></li>
+              <li><a href="exclusivehire.html">Exclusive Hire</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="christmas.html">Christmas</a></li>
+          <li><a href="spa.html">Spa</a></li>
+        </ul>
+      </nav>
+      <div class="booking-button">
+        <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="whhs_container">
+    <div class="whhs_carousel">
+      <div class="whhs_carousel-container">
+       
+        <div class="whhs_carousel-slide">
+          <img src="images/rooms/5.jpg" alt="Lawns Tipis" class="whhs_room-image" />
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Unique Outdoor Events</h2>
+            <p class="whhs_carousel-subtitle">Celebrate in style with our stunning Lawns Tipis.</p>
           </div>
         </div>
-      </header>
-    
-
-  <div class="whhs_container mx-auto">
-    <div class="whhs_hero">
-      <img src="images/rooms/Moncrieffe Dinner.jpg" alt="Moncrieffe Dinner">
-      <div class="whhs_hero-overlay">
-        <h1 class="whhs_hero-title">Special Events</h1>
-        <p class="whhs_hero-subtitle">Create unforgettable moments in our timeless venues.</p>
+        <div class="whhs_carousel-slide">
+          <img src="images/rooms/2.jpg" alt="Victorian Gardens" class="whhs_room-image" />
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Garden Celebrations</h2>
+            <p class="whhs_carousel-subtitle">Create magical moments in our picturesque Victorian Gardens.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/rooms/Moncrieffe Dinner.jpg" alt="Courtyard Banqueting" class="whhs_room-image" />
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Grand Banquets</h2>
+            <p class="whhs_carousel-subtitle">Host lavish events in our spacious Suite.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/rooms/Directors Suite Dinner.jpg" alt="Directors Suite Dinner" class="whhs_room-image" />
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Intimate Gatherings</h2>
+            <p class="whhs_carousel-subtitle">Host elegant private dinners in our historic Directors Suite.</p>
+          </div>
+        </div>
+        <div class="whhs_carousel-slide">
+          <img src="images/rooms/Conservatory Bar 1 (1).jpg" alt="Conservatory Bar" class="whhs_room-image" />
+          <div class="whhs_carousel-overlay">
+            <h2 class="whhs_carousel-title">Stylish Receptions</h2>
+            <p class="whhs_carousel-subtitle">Enjoy cocktails and celebrations in our Conservatory Bar.</p>
+          </div>
+        </div>
       </div>
+      <button class="whhs_prev" aria-label="Previous slide">❮</button>
+      <button class="whhs_next" aria-label="Next slide">❯</button>
+      <div class="whhs_carousel-indicators" role="tablist"></div>
     </div>
 
     <section class="whhs_intro">
-      <h1>Celebrate Your Special Moments</h1>
-      <p>We understand how important time together is for our guests, so we endeavour to ensure you get to relax and enjoy your own special event whilst we look after the details. Our timeless, versatile spaces are suitable for 10 to 200 guests, accommodating a range of occasions from Christenings and Proms to elegant dinner parties and celebrations of life.</p>
-      <p>Sunday Warwickshire Walton Hall Hotel & Spa is set in 65 acres of beautiful landscaped grounds in rural Warwickshire, with the Hall itself dating from the 16th Century. Once the ancestral home of the Mordaunt family, today its secluded setting and extensive facilities make it one of the region’s most versatile and desirable venues for private events.</p>
-      <a href="unforgettable-celebrations.html" class="whhs_btn">Discover Unforgettable Celebrations</a>
+      <div class="section-content">
+        <h1>Special Events @ Sunday Walton Hall Hotel & Spa</h1>
+        <p>We understand how important time together is for our guests, so we endeavour to ensure you can relax and enjoy your own special event whilst we look after the details. Our timeless, versatile spaces accommodate 10 to 200 guests, perfect for Christenings, Proms, elegant dinner parties, or celebrations of life.</p>
+        <p>Sunday Warwickshire Walton Hall Hotel & Spa is set in 65 acres of beautiful landscaped grounds in rural Warwickshire, with the Hall itself dating from the 16th Century. Once the ancestral home of the Mordaunt family, today its secluded setting and extensive facilities make it one of the region’s most versatile and desirable venues for private events.</p>
+        <a href="contact.html" class="whhs_btn-package">Inquire About Events</a>
+      </div>
     </section>
 
-    <section class="whhs_venues">
-      <h2>Our Exquisite Venues</h2>
-      <p>Our venues offer unparalleled elegance and flexibility, set against the stunning backdrop of our historic Hall and Victorian gardens.</p>
-      <div class="whhs_venue-grid">
-        <div class="whhs_venue-card">
-          <img src="images/rooms/Directors Suite Conference.jpg" alt="Directors Suite Dinner" class="whhs_venue-image">
-          <div class="whhs_venue-info">
-            <h3>Directors Suite</h3>
-            <p>Perfect for intimate private dinners or small gatherings, offering 16th-century charm and views of the grounds.</p>
-          </div>
+    <section class="whhs_packages">
+      <div class="section-content">
+        <h2>Flexible Packages</h2>
+        <p>We offer a range of fully inclusive, flexible packages that can be tailored around your individual event requirements. Our packages include everything you would expect as well as:</p>
+        <ul class="list-disc pl-6 mb-4">
+          <li>Free standard WiFi for all guests (upgrade available upon request)</li>
+          <li>A greeting from your dedicated event host</li>
+          <li>Your venue fully set up, plus coffee or a range of speciality teas on arrival</li>
+          <li>Inclusive refreshments throughout the event – you tell us when, where, and how often</li>
+          <li>Quality, varied, and healthy dining options – seasonally adjusted and tailored to your requirements</li>
+          <li>LCD screens with user guide and onsite support available for all events</li>
+          <li>Summary ‘one bill’ account covering all charges – with no hidden costs</li>
+        </ul>
+        <p>All of our packages are fully bespoke for your event needs. Simply contact our events team to discuss your requirements.</p>
+        <a href="contact.html" class="whhs_btn-package">Inquire About Packages</a>
+      </div>
+    </section>
+
+    <section class="magic-welcome-section">
+      <div class="magic-welcome-container">
+        <div class="magic-content">
+          <h2 class="magic-title">Aerial Elegance</h2>
+          <div class="magic-underline"></div>
+          <p class="magic-subtitle">
+            Soar above the tranquil beauty of Sunday Warwickshire Walton Hall Hotel & Spa — a breathtaking perspective that captures timeless charm from the skies.
+          </p>
         </div>
-        <div class="whhs_venue-card">
-          <img src="images/rooms/5.jpg" alt="Lawns Tipis" class="whhs_venue-image">
-          <div class="whhs_venue-info">
-            <h3>Lawns Tipis</h3>
-            <p>Host unique outdoor events on our manicured lawns, ideal for celebrations with a bohemian flair.</p>
-          </div>
-        </div>
-        <div class="whhs_venue-card">
-          <img src="images/rooms/2.jpg" alt="Victorian Gardens" class="whhs_venue-image">
-          <div class="whhs_venue-info">
-            <h3>Victorian Gardens</h3>
-            <p>A picturesque setting for garden parties or receptions, surrounded by lush greenery.</p>
-          </div>
-        </div>
-        <div class="whhs_venue-card">
-          <img src="images/rooms/Courtyard.jpg" alt="Courtyard Banqueting" class="whhs_venue-image">
-          <div class="whhs_venue-info">
-            <h3>Courtyard Suite</h3>
-            <p>Ideal for grand banquets or large celebrations, with access to a private terrace.</p>
-          </div>
-        </div>
-        <div class="whhs_venue-card">
-          <img src="images/rooms/Conservatory Bar 1 (1).jpg" alt="Conservatory Bar" class="whhs_venue-image">
-          <div class="whhs_venue-info">
-            <h3>Conservatory Bar</h3>
-            <p>A stylish venue with wraparound views, perfect for cocktail receptions or evening events.</p>
+        <div class="drone-reel-container">
+          <div class="drone-reel-embed" id="videoWrapper">
+            <iframe id="youtubeVideo" width="700" height="394"
+              src="https://www.youtube.com/embed/EkEgYyDfqHc?enablejsapi=1&rel=0&modestbranding=1"
+              title="Drone Reel"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+            <button id="customPlayBtn" class="drone-reel-play-btn" aria-label="Play drone reel video">►</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="whhs_catering">
-      <h2>Bespoke Catering</h2>
-      <p>We offer a wide range of catering to suit your needs, from buffets and private dinners to BBQs and bespoke menu offerings. Our culinary team crafts seasonal, high-quality dishes tailored to your event, ensuring a memorable dining experience for your guests.</p>
-      <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
-        <input type="hidden" name="_subject" value="Catering Inquiry">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-        <button type="submit" class="whhs_btn">Inquire About Catering</button>
-      </form>
+    <section class="whhs_room-section">
+      <div class="section-content">
+        <h2>Our Event Spaces</h2>
+        <div class="whhs_filter-buttons">
+          <button class="whhs_filter-btn whhs_active" data-filter="all" tabindex="0" aria-pressed="true">All</button>
+          <button class="whhs_filter-btn" data-filter="hall" tabindex="0" aria-pressed="false">16th Century Hall</button>
+          <button class="whhs_filter-btn" data-filter="outdoor" tabindex="0" aria-pressed="false">Outdoor Venues</button>
+          <button class="whhs_filter-btn" data-filter="dining" tabindex="0" aria-pressed="false">Dining & Bars</button>
+        </div>
+        <div class="whhs_meeting-rooms-grid">
+          <div class="whhs_meeting-room" data-category="hall dining" tabindex="0">
+            <img src="images/rooms/Directors Suite Dinner.jpg" alt="Directors Suite Dinner" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Directors Suite</h3>
+              <p>Located in the 16th Century Hall, perfect for intimate private dinners or small gatherings with historic charm.</p>
+              <ul class="list-disc pl-6">
+                <li>Capacity: Boardroom: 14 | Dinner: 14</li>
+                <li>Area: 36.66 m² | Dimensions: 7.8m x 4.7m | Height: 4.67m</li>
+                <li>Features: Natural daylight, disabled access</li>
+              </ul>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="outdoor" tabindex="0">
+            <img src="images/rooms/5.jpg" alt="Lawns Tipis" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Lawns Tipis</h3>
+              <p>Host unique outdoor events on our manicured lawns, ideal for celebrations with a bohemian flair.</p>
+              <ul class="list-disc pl-6">
+                <li>Capacity: Up to 200 guests</li>
+                <li>Features: Flexible setup, scenic views</li>
+              </ul>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="outdoor" tabindex="0">
+            <img src="images/rooms/2.jpg" alt="Victorian Gardens" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Victorian Gardens</h3>
+              <p>A picturesque setting for garden parties or receptions, surrounded by lush greenery.</p>
+              <ul class="list-disc pl-6">
+                <li>Capacity: Up to 150 guests</li>
+                <li>Features: Outdoor setting, ideal for receptions</li>
+              </ul>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="hall dining" tabindex="0">
+            <img src="images/banquet/Courtyard Banquet (1).png" alt="Courtyard Banqueting" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Courtyard Suite</h3>
+              <p>Ideal for grand banquets or large celebrations, with access to a private terrace and two 10ft screens.</p>
+              <ul class="list-disc pl-6">
+                <li>Capacity: Theatre: 220 | Cabaret: 200 | Dinner: 140/150 max (with dance floor)</li>
+                <li>Area: 262.48 m² | Dimensions: 19.3m x 13.6m | Height: 2.6m</li>
+                <li>Features: Natural daylight, disabled access, air conditioning</li>
+              </ul>
+            </div>
+          </div>
+          <div class="whhs_meeting-room" data-category="dining" tabindex="0">
+            <img src="images/rooms/Conservatory Bar 1 (1).jpg" alt="Conservatory Bar" class="whhs_room-image" />
+            <div class="whhs_room-info">
+              <h3>Conservatory Bar</h3>
+              <p>A stylish venue with wraparound views, perfect for cocktail receptions or evening events.</p>
+              <ul class="list-disc pl-6">
+                <li>Capacity: Up to 100 guests</li>
+                <li>Features: Scenic views, modern ambiance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="whhs_packages">
+      <div class="section-content">
+        <h2>Bespoke Catering</h2>
+        <p>We offer a wide range of catering options, from buffets and private dinners to BBQs and bespoke menus. Our culinary team crafts seasonal, high-quality dishes tailored to your event, ensuring a memorable dining experience.</p>
+        <a href="contact.html" class="whhs_btn-package">Inquire About Catering</a>
+      </div>
     </section>
 
     <section class="whhs_contact">
-      <h2>Contact Us Now</h2>
-      <p>Let our dedicated team bring your special event to life. Contact us to discuss your vision or to arrange a visit to our stunning venue.</p>
-      <p><strong>Telephone:</strong> <a href="tel:+441789842424">01789 842424</a></p>
-      <p><strong>Email:</strong> <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a></p>
-      <button class="whhs_btn" onclick="document.getElementById('contactModal').style.display='flex'">Contact Us Now</button>
+      <div class="section-content">
+        <h2>Contact Us Now</h2>
+        <p>Let our dedicated team bring your special event to life. Contact us to discuss your vision or arrange a visit to our stunning venue.</p>
+        <p><strong>Telephone:</strong> <a href="tel:+441789842424">01789 842424</a></p>
+        <p><strong>Email:</strong> <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a></p>
+        <a href="contact.html" class="whhs_btn-contact">Contact Us</a>
+      </div>
     </section>
+  </main>
 
-    <div class="whhs_modal" id="contactModal">
-      <div class="whhs_modal-content">
-        <h3 class="font-cinzel text-2xl mb-4">Event Inquiry</h3>
-        <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="whhs_contact-form">
-          <input type="text" name="name" placeholder="Full Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <input type="tel" name="phone" placeholder="Phone Number">
-          <textarea rows="4" name="details" placeholder="Event Details (e.g., date, type, number of guests)" required></textarea>
-          <input type="hidden" name="_subject" value="Special Event Inquiry">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-          <button type="submit">Submit Inquiry</button>
-        </form>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <address>
+            Sunday Warwickshire Walton Hall Hotel & Spa<br />
+            Walton, Wellesbourne, CV35 9HG<br />
+            <a href="tel:+441789842424">+44 01789 842424</a><br />
+            <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a>
+          </address>
+          <a href="contact.html" class="footer-button">Get in Touch</a>
+        </div>
+        <div class="footer-column">
+          <h4>Getting Here</h4>
+          <p><strong>By Road:</strong>  
+              <p>From M40 North (J13), follow signs to Wellesbourne, then right after the Watermill.  </p>
+              <p>From M40 South (J15), take A429 to Wellesbourne, then right after the Watermill.  
+          Follow the single lane for 1.5 miles.</p>
+        </div>
+        <div class="newsletter">
+          <h4>Newsletter</h4>
+          <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="newsletter-form" onsubmit="return validateForm(this)">
+            <input type="email" name="email" placeholder="Your email address" required aria-label="Email Address" />
+            <button type="submit">Subscribe</button>
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="New Newsletter Signup!" />
+            <input type="hidden" name="_next" value="https://www.waltonhotelspa.com/newsletter.html?subscribed=true" />
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Sunday Warwickshire Walton Hall Hotel & Spa. All rights reserved.</p>
+        <ul class="footer-legal">
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms & Conditions</a></li>
+          <li><a href="#sitemap">Sitemap</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-
-  <footer class="site-footer" id="contact">
-    <div class="container">
-        <div class="footer-columns">
-            <div class="footer-column">
-              <li>
-                <a href="contact.html" class="footer-button">Contact Us</a>
-              </li>
-                <address>
-                    Sunday Warwickshire Walton Hall Hotel & Spa<br>
-                    Walton, Wellesbourne, CV35 9HG<br>
-                    <a href="tel:+441789842424">+44 01789 842424</a><br>
-                    <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a>
-                </address>
-            </div>
-            <div class="footer-column">
-                <h4>Getting Here</h4>
-                <p>From the M40 (South), exit at junction 15. Take the fourth exit onto the A429 to Cirencester. Continue through Barford and turn left at the roundabout for Wellesbourne.</p>
-            </div>
-            <div class="newsletter">
-              <h4>Newsletter</h4>
-              <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="newsletter-form">
-                <input type="email" name="email" placeholder="Your email address" required>
-                <button class="btn" type="submit">Subscribe</button>
-                <!-- Settings -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="New Newsletter Signup!">
-                <input type="hidden" name="_next" value="https://yourdomain.com/newsletter.html?subscribed=true">
-              </form>
-              <div id="newsletter-popup" class="popup-message">Thank you for subscribing! 🎉</div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Sunday Warwickshire Walton Hall Hotel & Spa. All rights reserved.</p>
-            <ul class="footer-legal">
-                <li><a href="#privacy">Privacy Policy</a></li>
-                <li><a href="#terms">Terms & Conditions</a></li>
-                <li><a href="#sitemap">Sitemap</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
+  </footer>
 
   <script>
-    // Mobile menu toggle
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('whhs_active');
-      mobileToggle.classList.toggle('active');
-      if (mobileToggle.classList.contains('active')) {
-        mobileToggle.querySelectorAll('span')[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        mobileToggle.querySelectorAll('span')[1].style.opacity = '0';
-        mobileToggle.querySelectorAll('span')[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
-      } else {
-        mobileToggle.querySelectorAll('span')[0].style.transform = 'none';
-        mobileToggle.querySelectorAll('span')[1].style.opacity = '1';
-        mobileToggle.querySelectorAll('span')[2].style.transform = 'none';
+    // Form Validation
+    function validateForm(form) {
+      const email = form.querySelector('input[type="email"]');
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        alert('Please enter a valid email address.');
+        email.focus();
+        return false;
       }
-    });
+      return true;
+    }
 
-    // Modal
-    const modal = document.getElementById('contactModal');
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.style.display = 'none';
-    });
+    // YouTube Player Variables
+    let player;
+    const playBtn = document.getElementById('customPlayBtn');
 
-    // Parallax effect
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      document.querySelectorAll('.whhs_intro, .whhs_venues, .whhs_catering, .whhs_contact').forEach(section => {
-        const speed = 0.15;
-        section.style.backgroundPositionY = -(scrolled * speed) + 'px';
+    // Load YouTube IFrame API
+    function loadYouTubeAPI() {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+
+    // YouTube IFrame API Ready Callback
+    window.onYouTubeIframeAPIReady = function () {
+      player = new YT.Player('youtubeVideo', {
+        events: {
+          'onStateChange': onPlayerStateChange,
+          'onError': (event) => {
+            console.error('YouTube Player Error:', event.data);
+            playBtn.style.display = 'block';
+          }
+        }
       });
-    });
+    };
 
-    // Image error handling
-    document.querySelectorAll('img').forEach(img => {
-      img.onerror = () => {
-        img.src = 'images/placeholder.jpg';
+    // Player State Change Handler
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.ENDED) {
+        playBtn.style.display = 'block';
+      }
+    }
+
+    // Carousel Preload Images
+    function preloadImages(imageUrls, callback) {
+      let loadedImages = 0;
+      const totalImages = imageUrls.length;
+      imageUrls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => {
+          loadedImages++;
+          if (loadedImages === totalImages) {
+            callback();
+          }
+        };
+        img.onerror = () => {
+          console.error('Failed to preload image:', url);
+          loadedImages++;
+          if (loadedImages === totalImages) {
+            callback();
+          }
+        };
+      });
+    }
+
+    // Debounce function to limit rapid clicks
+    function debounce(func, wait) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
       };
+    }
+
+    // Event Listeners
+    window.addEventListener('DOMContentLoaded', () => {
+      // Initialize YouTube API
+      loadYouTubeAPI();
+
+      // Custom Play Button
+      if (playBtn) {
+        playBtn.addEventListener('click', () => {
+          if (player && typeof player.playVideo === 'function') {
+            playBtn.style.display = 'none';
+            player.playVideo();
+          } else {
+            console.warn('YouTube player not ready yet.');
+          }
+        });
+      }
+
+      // Mobile Menu Toggle
+      const mobileToggle = document.querySelector('.mobile-menu-toggle');
+      const nav = document.querySelector('.main-navigation');
+      mobileToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
+        const isActive = mobileToggle.classList.contains('active');
+        mobileToggle.setAttribute('aria-expanded', isActive);
+        const spans = mobileToggle.querySelectorAll('span');
+        spans[0].style.transform = isActive ? 'rotate(45deg) translate(5px, 5px)' : 'none';
+        spans[1].style.opacity = isActive ? '0' : '1';
+        spans[2].style.transform = isActive ? 'rotate(-45deg) translate(7px, -7px)' : 'none';
+      });
+
+      // Newsletter Popup
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('subscribed') === 'true') {
+        const popup = document.getElementById('newsletter-popup');
+        if (popup) {
+          popup.style.display = 'block';
+          setTimeout(() => popup.style.display = 'none', 5000);
+        }
+      }
+
+      // Carousel
+      const carouselContainer = document.querySelector('.whhs_carousel-container');
+      const carouselSlides = document.querySelectorAll('.whhs_carousel-slide');
+      const indicatorsContainer = document.querySelector('.whhs_carousel-indicators');
+      const prevButton = document.querySelector('.whhs_prev');
+      const nextButton = document.querySelector('.whhs_next');
+      let currentIndex = 0;
+      const totalSlides = carouselSlides.length;
+      let autoSlideInterval = null;
+      let isCarouselReady = false;
+
+      // Collect image URLs for preloading
+      const imageUrls = Array.from(carouselSlides).map(slide => slide.querySelector('img').src);
+
+      // Initialize carousel after images are preloaded
+      preloadImages(imageUrls, () => {
+        isCarouselReady = true;
+        updateCarousel();
+        startAutoSlide();
+      });
+
+      // Initialize indicators
+      for (let i = 0; i < totalSlides; i++) {
+        const indicator = document.createElement('button');
+        indicator.classList.add('whhs_indicator');
+        indicator.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        indicator.setAttribute('role', 'tab');
+        indicator.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        if (i === 0) indicator.classList.add('whhs_active');
+        indicator.addEventListener('click', debounce(() => {
+          if (isCarouselReady) {
+            currentIndex = i;
+            updateCarousel();
+            pauseAutoSlide();
+          }
+        }, 300));
+        indicator.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            if (isCarouselReady) {
+              currentIndex = i;
+              updateCarousel();
+              pauseAutoSlide();
+            }
+          }
+        });
+        indicatorsContainer.appendChild(indicator);
+      }
+
+      function updateCarousel() {
+        if (!isCarouselReady) return;
+        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        document.querySelectorAll('.whhs_indicator').forEach((indicator, i) => {
+          indicator.classList.toggle('whhs_active', i === currentIndex);
+          indicator.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
+        });
+      }
+
+      function startAutoSlide() {
+        if (autoSlideInterval) clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
+          if (isCarouselReady) {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+          }
+        }, 8000);
+      }
+
+      function pauseAutoSlide() {
+        if (autoSlideInterval) clearInterval(autoSlideInterval);
+        setTimeout(startAutoSlide, 10000);
+      }
+
+      const debouncedPrev = debounce(() => {
+        if (isCarouselReady) {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          updateCarousel();
+          pauseAutoSlide();
+        }
+      }, 300);
+
+      const debouncedNext = debounce(() => {
+        if (isCarouselReady) {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          updateCarousel();
+          pauseAutoSlide();
+        }
+      }, 300);
+
+      prevButton.addEventListener('click', debouncedPrev);
+      nextButton.addEventListener('click', debouncedNext);
+
+      prevButton.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          debouncedPrev();
+        }
+      });
+
+      nextButton.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          debouncedNext();
+        }
+      });
+
+      carouselContainer.addEventListener('mouseenter', pauseAutoSlide);
+      carouselContainer.addEventListener('mouseleave', startAutoSlide);
+      prevButton.addEventListener('focus', pauseAutoSlide);
+      nextButton.addEventListener('focus', pauseAutoSlide);
+      indicatorsContainer.addEventListener('focusin', pauseAutoSlide);
+      indicatorsContainer.addEventListener('focusout', startAutoSlide);
+
+      // Image Error Handling
+      document.querySelectorAll('img').forEach(img => {
+        img.onerror = () => {
+          console.error('Failed to load image:', img.src);
+          img.src = 'images/rooms/fallback.jpg';
+        };
+      });
+
+      // Filter
+      const filterButtons = document.querySelectorAll('.whhs_filter-btn');
+      const meetingRooms = document.querySelectorAll('.whhs_meeting-room');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => {
+            btn.classList.remove('whhs_active');
+            btn.setAttribute('aria-pressed', 'false');
+          });
+          button.classList.add('whhs_active');
+          button.setAttribute('aria-pressed', 'true');
+          const filter = button.getAttribute('data-filter');
+          meetingRooms.forEach(room => {
+            const categories = room.getAttribute('data-category').split(' ');
+            room.style.display = filter === 'all' || categories.includes(filter) ? 'block' : 'none';
+          });
+        });
+
+        button.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            button.click();
+          }
+        });
+      });
     });
   </script>
 </body>
