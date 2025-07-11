@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Experience relaxation at the Spa at Sunday Warwickshire Walton Hall Hotel & Spa, offering treatments, a fitness studio, indoor pool, sauna, and steam room in a tranquil countryside setting.">
+  <meta name="keywords" content="spa, Walton Hall, Warwickshire, wellness, treatments, indoor pool, sauna, fitness studio, relaxation">
+  <meta name="author" content="Sunday Warwickshire Walton Hall Hotel & Spa">
+  <title>Spa at Walton Hall | Sunday Warwickshire Walton Hall Hotel & Spa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+   
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--light-color);
+      background: url('images/index/Pool.jpg');
+      background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: auto; /* Ensures browser uses default smoothing */
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(rgba(46,64,51,0.65), rgba(0,0,0,0.45));
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      color: var(--light-color);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .hero .tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    .hero p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--light-color);
+    }
+    .btn-primary {
+      background: var(--primary-color);
+      color: var(--light-color);
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .btn-primary1 {
+      background: var(--primary-color);
+      color: var(--light-color);
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+      display: inline-block;
+      margin-left: 27REM;
+      margin-top: 1rem;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-color);
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding: 4rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--light-color);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .section:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      color: var(--secondary-color);
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .section h2::after {
+      content: '';
+      width: 80px;
+      height: 3px;
+      background: var(--primary-color);
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .section p {
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--dark-color);
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      padding: 1rem 2rem;
+      background: var(--light-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .contact-info:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .contact-info strong {
+      color: var(--secondary-color);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+    }
+
+    .contact-info a {
+      color: var(--accent-color);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-info a:hover {
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+
+    .content-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .content-text {
+      flex: 1;
+      min-width: 280px;
+      padding: 1.5rem;
+    }
+
+    .content-text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--dark-color);
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .content-image {
+      flex: 1;
+      min-width: 280px;
+      max-width: 500px;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 400px;
+    }
+
+    .content-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: var(--transition);
+    }
+
+    .content-image img:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-card {
+      background: var(--light-color);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-card:hover img {
+      filter: brightness(105%);
+    }
+
+    .gallery-card-content {
+      padding: 1.5rem;
+    }
+
+    .gallery-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin: 0.8rem 0;
+    }
+
+    .gallery-card p {
+      font-size: 1rem;
+      color: var(--dark-color);
+      max-width: 280px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .testimonial-carousel {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--accent-color);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .testimonial-slide {
+      display: none;
+      animation: fadeIn 1s ease;
+    }
+
+    .testimonial-slide.active {
+      display: block;
+    }
+
+    .testimonial-slide h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--light-color);
+      font-size: 1.6rem;
+    }
+
+    .testimonial-slide p {
+      color: var(--dark-color);
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .testimonial-slide .author {
+      font-weight: bold;
+      color: var(--secondary-color);
+      font-size: 1rem;
+    }
+
+    .carousel-controls {
+      margin-top: 1.5rem;
+    }
+
+    .carousel-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      margin: 0 6px;
+      cursor: pointer;
+      opacity: 0.5;
+      border: 2px solid var(--light-color);
+      transition: var(--transition);
+    }
+
+    .carousel-dot.active {
+      opacity: 1;
+      border: 2px solid var(--accent-color);
+      transform: scale(1.2);
+    }
+
+    .contact-section {
+      background: white;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      color: var(--light-color);
+    }
+
+    .contact-section a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+      transition: var(--transition);
+    }
+
+    .contact-section a:hover {
+      color: var(--light-color);
+    }
+
+    .footer-button {
+      background: var(--primary-color);
+      color: var(--light-color);
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .footer-button:hover {
+      background: var(--accent-color);
+      transform: scale(1.05);
+    }
+
+    .wave {
+      display: block;
+      width: 100%;
+      height: 80px;
+      margin-bottom: -1px;
+      fill: var(--light-color);
+      animation: waveAnimation 10s linear infinite;
+    }
+
+    .floating-leaves {
+      pointer-events: none;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      left: 0; top: 0;
+      z-index: 2;
+    }
+
+    .leaf {
+      position: absolute;
+      font-size: 1.8rem;
+      opacity: 0.6;
+      animation: floatLeaf 12s linear infinite;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.95);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      transform: scale(0.9);
+      transition: var(--transition);
+    }
+
+    .lightbox.active img {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      background: var(--primary-color);
+      color: var(--light-color);
+      border: none;
+      font-size: 1.8rem;
+      border-radius: 50%;
+      width: 40px; height: 40px;
+      position: absolute;
+      top: 20px; right: 30px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-close:hover {
+      background: var(--accent-color);
+      transform: scale(1.1);
+    }
+
+    @keyframes floatLeaf {
+      0% { transform: translateY(-100px) scale(1) rotate(0deg); opacity: 0.6; }
+      50% { transform: translateY(50vh) scale(1.2) rotate(180deg); opacity: 0.8; }
+      100% { transform: translateY(100vh) scale(1.4) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes waveAnimation {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-1440px); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-60px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .hero { min-height: 70vh; }
+      .hero h1 { font-size: 2.5rem; }
+      .hero .tagline { font-size: 1.2rem; }
+      .hero p { font-size: 1.1rem; }
+      .section { padding: 2rem 1rem; }
+      .content-section { flex-direction: column; }
+      .gallery-section { grid-template-columns: 1fr; }
+      .gallery-card img { height: 200px; }
+      .contact-info { flex-direction: column; gap: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="site-header" role="banner">
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/index/output-onlinepngtools.png" alt="Walton Hall Hotel & Spa Logo" />
+          </a>
+        </div>
+        <nav class="main-navigation" aria-label="Main navigation">
+          <ul class="nav-menu">
+            <li class="dropdown">
+              <a href="#" aria-haspopup="true" aria-expanded="false">About</a>
+              <ul class="dropdown-menu">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </li>
+            <li><a href="rooms.html">Rooms</a></li>
+            <li class="dropdown">
+              <a href="#" aria-haspopup="true" aria-expanded="false">Meetings & Events</a>
+              <ul class="dropdown-menu">
+                <li><a href="meetings.html">Meetings</a></li>
+                <li><a href="events.html">Special Events</a></li>
+                <li><a href="exclusivehire.html">Exclusive Hire</a></li>
+              </ul>
+            </li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="weddings.html">Weddings</a></li>
+            <li><a href="christmas.html">Christmas</a></li>
+            <li><a href="spa.html">Spa</a></li>
+        </ul>
+        </nav>
+        <div class="booking-button">
+          <a href="https://booking.emea.hkclients.com/index.html#/booking/search?pc=ENWCW001&property_id=a21b3ab9-512f-413e-91bc-5077d3b10bb0&url=https://www.oyorooms.com/gb/292291/" class="btn-book">Book Now</a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+    
+    <section class="hero">
+      <div class="floating-leaves" id="floating-leaves"></div>
+      <div class="hero-content" data-aos="fade-in">
+        <h1>Discover Serenity at Our Spa</h1>
+        <p class="tagline">Relax, Rejuvenate, Restore</p>
+        <p>Unwind in the tranquil Warwickshire countryside at Sunday Warwickshire Walton Hall Hotel & Spa</p>
+        <a href="https://www.vagaro.com/uk01/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVKOUWVD15XSjc0gHFQa+P52nY+71mFX0UTTLeFv6B/FsabAs5cyoxouVJ60ZqQreei4m10nSaBpIXspPkhGQ/bJvzB1+SM376okjrvm1iXOQN4Sh5OqN1JT/Gv7gHLI7EyEwXD7h9VIl7VaIdESKqY/cjk/3zwEUNX9esZhExOmTykWoApKMIcc1GOlrdZeoBVW4xe209AERY8uH28fOwBk+o+abcPS584y+nIS8nWDEzUlLns3xnzgcUNfwFUSX3LqQzqg9tVzlt1cwVnSpNaHQIZabCnsP+ZiT2ofUrKGARubyMynKnepGE8e38Ncrv3Vm7s27EDJ4QIJ6JXMJ0cVqlrWu9+BKpLFYFuBTn5nwrEbdgtsFCRNOidcFiFtRHtv1UMQ/Zg6aQzTx74FCkaAKSGtmdiW72TS6hUPx9bN7QG5P7fBR1hZf5h2Oi7kEIw==" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Your Spa Day</a>
+      </div>
+    </section>
+    <svg class="wave" viewBox="0 0 1440 80"><path fill="#f9f9f9" fill-opacity="1" d="M0,0 C480,80 960,0 1440,80 L1440,0 L0,0 Z"></path></svg>
+
+    <section class="section">
+      <h2 data-aos="fade-up">A Haven of Relaxation</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Escape to our serene spa, nestled in the heart of the Warwickshire countryside. In the tranquil Warwickshire countryside, the Spa at Sunday Warwickshire Walton Hall Hotel & Spa offers a peaceful retreat on our historic estate. Located in the contemporary part of the property, our health and leisure club is designed for the modern traveler, providing everything you need to work out and wind down. 
+        Enjoy our state-of-the-art fitness studio, indoor pool, sauna, and steam room, all with stunning views of the pretty gardens and grounds outside. Whether you're seeking an active session or a moment of calm, our facilities cater to your every need.</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 data-aos="fade-up">Indulgent Treatments</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Pamper yourself with our luxurious face and body treatments, manicures, and pedicures. Our spa features seven beautifully appointed treatment rooms, where our skilled therapists deliver a range of face and body treatments tailored to help you feel your best. From rejuvenating facials to soothing massages, manicures, and pedicures, every experience is designed to restore and uplift. 
+        Indulge in a personalized pampering session and let our team create a moment of pure relaxation for you.</p>
+          <a href="https://www.vagaro.com/uk01/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVKOUWVD15XSjc0gHFQa+P52nY+71mFX0UTTLeFv6B/FsabAs5cyoxouVJ60ZqQreei4m10nSaBpIXspPkhGQ/bJvzB1+SM376okjrvm1iXOQN4Sh5OqN1JT/Gv7gHLI7EyEwXD7h9VIl7VaIdESKqY/cjk/3zwEUNX9esZhExOmTykWoApKMIcc1GOlrdZeoBVW4xe209AERY8uH28fOwBk+o+abcPS584y+nIS8nWDEzUlLns3xnzgcUNfwFUSX3LqQzqg9tVzlt1cwVnSpNaHQIZabCnsP+ZiT2ofUrKGARubyMynKnepGE8e38Ncrv3Vm7s27EDJ4QIJ6JXMJ0cVqlrWu9+BKpLFYFuBTn5nwrEbdgtsFCRNOidcFiFtRHtv1UMQ/Zg6aQzTx74FCkaAKSGtmdiW72TS6hUPx9bN7QG5P7fBR1hZf5h2Oi7kEIw==" target="_blank" rel="noopener noreferrer" class="btn-primary1">Book a Treatment</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 data-aos="fade-up">Spa Facilities</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Explore our state-of-the-art amenities designed for wellness and relaxation.</p>
+      <div class="gallery-section" data-aos="fade-up" data-aos-delay="200">
+        <div class="gallery-card">
+          <div class="gallery-card-content">
+            <h3>Fitness Studio</h3>
+            <p>Stay active with our modern fitness equipment in a serene setting.</p>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-card-content">
+            <h3>Indoor Pool</h3>
+            <p>Take a refreshing dip with views of our picturesque gardens.</p>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-card-content">
+            <h3>Sauna & Steam Room</h3>
+            <p>Unwind in our soothing sauna and steam room for ultimate relaxation.</p>
+          </div>
+        </div>
+      </div>
+      <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">×</button>
+        <img src="" alt="" id="lightbox-img">
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 data-aos="fade-up">Guest Experiences</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Hear from guests who found serenity at our spa.</p>
+      <div class="testimonial-carousel" id="testimonial-carousel" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-slide active">
+          <h3>A Perfect Escape</h3>
+          <p>The spa treatments were incredible, and the pool was so relaxing!</p>
+          <p class="author">James</p>
+        </div>
+        <div class="testimonial-slide">
+          <h3>Pure Bliss</h3>
+          <p>The therapists made my spa day unforgettable with their expertise.</p>
+          <p class="author">Liam</p>
+        </div>
+        <div class="testimonial-slide">
+          <h3>Tranquil Retreat</h3>
+          <p>The serene setting and facilities were exactly what I needed.</p>
+          <p class="author">Daniel</p>
+        </div>
+        <div class="carousel-controls" id="testimonial-dots"></div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" data-aos="fade-up">
+      <h2>Plan Your Spa Day</h2>
+      <p>Contact us to learn more or book your spa experience directly.</p>
+      
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h4>Contact Us</h4>
+            <address>
+              Sunday Warwickshire Walton Hall Hotel & Spa<br />
+              Walton, Wellesbourne, CV35 9HG<br />
+              <a href="tel:+441789842424">+44 01789 842424</a><br />
+              <a href="mailto:mice.waltonhall@hotelssunday.com">mice.waltonhall@hotelssunday.com</a>
+            </address>
+            <a href="contact.html" class="footer-button">Get in Touch</a>
+          </div>
+          <div class="footer-column">
+            <h4>Getting Here</h4>
+            <p><strong>By Road:</strong>  
+                <p>From M40 North (J13), follow signs to Wellesbourne, then right after the Watermill.  </p>
+                <p>From M40 South (J15), take A429 to Wellesbourne, then right after the Watermill.  
+            Follow the single lane for 1.5 miles.</p>
+          </div>
+          <div class="newsletter">
+            <h4>Newsletter</h4>
+            <form action="https://formsubmit.co/sanjam.singh1@oyorooms.com" method="POST" class="newsletter-form" onsubmit="return validateForm(this)">
+              <input type="email" name="email" placeholder="Your email address" required aria-label="Email Address" />
+              <button type="submit">Subscribe</button>
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_subject" value="New Newsletter Signup!" />
+              <input type="hidden" name="_next" value="https://www.waltonhotelspa.com/newsletter.html?subscribed=true" />
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 Sunday Warwickshire Walton Hall Hotel & Spa. All rights reserved.</p>
+          <ul class="footer-legal">
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms & Conditions</a></li>
+            <li><a href="#sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Floating Leaves Animation
+    function createLeaf() {
+      const leaf = document.createElement('span');
+      leaf.className = 'leaf';
+      leaf.textContent = '🍃';
+      leaf.style.left = Math.random() * 100 + 'vw';
+      leaf.style.fontSize = (Math.random() * 1.2 + 1.2) + 'rem';
+      leaf.style.animationDuration = (Math.random() * 5 + 8) + 's';
+      leaf.style.top = '-100px';
+      document.getElementById('floating-leaves').appendChild(leaf);
+      setTimeout(() => leaf.remove(), 20000);
+    }
+    setInterval(createLeaf, 15000);
+
+    // Lightbox Functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    document.querySelectorAll('.content-image img, .gallery-card img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightbox.classList.add('active');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+    lightboxClose.onclick = () => {
+      lightbox.classList.remove('active');
+      lightbox.style.display = 'none';
+    };
+    lightbox.onclick = e => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+        lightbox.style.display = 'none';
+      }
+    };
+
+    // Testimonial Carousel
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dotsContainer = document.getElementById('testimonial-dots');
+    let currentSlide = 0;
+    function showSlide(idx) {
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === idx));
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => dot.classList.toggle('active', i === idx));
+    }
+    slides.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => { currentSlide = i; showSlide(i); }
+      dotsContainer.appendChild(dot);
+    });
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 5000);
+
+    // Mobile Menu Toggle
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.main-navigation');
+    mobileToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      mobileToggle.classList.toggle('active');
+      const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+      mobileToggle.setAttribute('aria-expanded', !expanded);
+      const spans = mobileToggle.querySelectorAll('span');
+      if (mobileToggle.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    });
+
+    // Image Error Handling
+    document.querySelectorAll('img').forEach(img => {
+      img.onerror = () => {
+        console.error('Failed to load image:', img.src);
+        img.src = 'images/rooms/fallback.jpg';
+      };
+    });
+  </script>
+</body>
+</html>
