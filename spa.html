@@ -664,18 +664,7 @@
     AOS.init({ duration: 1000, once: true });
 
     // Floating Leaves Animation
-    function createLeaf() {
-      const leaf = document.createElement('span');
-      leaf.className = 'leaf';
-      leaf.textContent = '🍃';
-      leaf.style.left = Math.random() * 100 + 'vw';
-      leaf.style.fontSize = (Math.random() * 1.2 + 1.2) + 'rem';
-      leaf.style.animationDuration = (Math.random() * 5 + 8) + 's';
-      leaf.style.top = '-100px';
-      document.getElementById('floating-leaves').appendChild(leaf);
-      setTimeout(() => leaf.remove(), 20000);
-    }
-    setInterval(createLeaf, 15000);
+    
 
     // Lightbox Functionality
     const lightbox = document.getElementById('lightbox');
